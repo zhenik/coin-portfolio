@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuVC.swift
 //  coin-portfolio
 //
 //  Created by Nikita on 26/11/2017.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.revealViewController().rearViewRevealWidth = self.view.frame.size.width - 60
     }
 
-
-
 }
-

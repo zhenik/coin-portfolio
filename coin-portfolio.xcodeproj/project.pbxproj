@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		108405EC7993999F69140846 /* Pods_coin_portfolioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494451455854CA7E21BF33D3 /* Pods_coin_portfolioUITests.framework */; };
+		246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E810C1FCB1740000738F9 /* MenuVC.swift */; };
 		24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B85E5B1FCB13F900BFF970 /* SWRevealViewController.m */; };
+		24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B85E601FCB170800BFF970 /* PortfolioVC.swift */; };
 		24CFF4AD1FCB0BCF00324AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4AC1FCB0BCF00324AAA /* AppDelegate.swift */; };
-		24CFF4AF1FCB0BCF00324AAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4AE1FCB0BCF00324AAA /* ViewController.swift */; };
 		24CFF4B21FCB0BCF00324AAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CFF4B01FCB0BCF00324AAA /* Main.storyboard */; };
 		24CFF4B51FCB0BCF00324AAA /* coin_portfolio.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4B31FCB0BCF00324AAA /* coin_portfolio.xcdatamodeld */; };
 		24CFF4B71FCB0BCF00324AAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24CFF4B61FCB0BCF00324AAA /* Assets.xcassets */; };
@@ -40,12 +41,13 @@
 
 /* Begin PBXFileReference section */
 		102C0C8D383398935A5A6F82 /* Pods-coin-portfolio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolio.release.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolio/Pods-coin-portfolio.release.xcconfig"; sourceTree = "<group>"; };
+		246E810C1FCB1740000738F9 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		24B85E591FCB13F800BFF970 /* coin-portfolio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "coin-portfolio-Bridging-Header.h"; sourceTree = "<group>"; };
 		24B85E5A1FCB13F900BFF970 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		24B85E5B1FCB13F900BFF970 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		24B85E601FCB170800BFF970 /* PortfolioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioVC.swift; sourceTree = "<group>"; };
 		24CFF4A91FCB0BCF00324AAA /* coin-portfolio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "coin-portfolio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CFF4AC1FCB0BCF00324AAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24CFF4AE1FCB0BCF00324AAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		24CFF4B11FCB0BCF00324AAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		24CFF4B41FCB0BCF00324AAA /* coin_portfolio.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coin_portfolio.xcdatamodel; sourceTree = "<group>"; };
 		24CFF4B61FCB0BCF00324AAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,29 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
+		24B85E5D1FCB16A100BFF970 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		24B85E5E1FCB16AC00BFF970 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				24B85E601FCB170800BFF970 /* PortfolioVC.swift */,
+				246E810C1FCB1740000738F9 /* MenuVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		24B85E5F1FCB16B200BFF970 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		24CFF4A01FCB0BCF00324AAA = {
 			isa = PBXGroup;
 			children = (
@@ -130,9 +155,11 @@
 		24CFF4AB1FCB0BCF00324AAA /* coin-portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				24B85E5F1FCB16B200BFF970 /* View */,
+				24B85E5E1FCB16AC00BFF970 /* Controller */,
+				24B85E5D1FCB16A100BFF970 /* Model */,
 				24B85E581FCB13BA00BFF970 /* Supporting files */,
 				24CFF4AC1FCB0BCF00324AAA /* AppDelegate.swift */,
-				24CFF4AE1FCB0BCF00324AAA /* ViewController.swift */,
 				24CFF4B01FCB0BCF00324AAA /* Main.storyboard */,
 				24CFF4B61FCB0BCF00324AAA /* Assets.xcassets */,
 				24CFF4B81FCB0BCF00324AAA /* LaunchScreen.storyboard */,
@@ -466,9 +493,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				24CFF4B51FCB0BCF00324AAA /* coin_portfolio.xcdatamodeld in Sources */,
-				24CFF4AF1FCB0BCF00324AAA /* ViewController.swift in Sources */,
 				24CFF4AD1FCB0BCF00324AAA /* AppDelegate.swift in Sources */,
 				24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */,
+				24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */,
+				246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
