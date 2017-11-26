@@ -9,6 +9,12 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MenuVC-->
         <scene sceneID="Ku9-m5-uSP">
@@ -17,13 +23,88 @@
                     <view key="view" contentMode="scaleToFill" id="Yyf-gC-plJ" customClass="GradientView" customModule="coin_portfolio" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="qWd-1Q-FCJ">
+                                <rect key="frame" x="10" y="44" width="74" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="74" id="IQy-OJ-M1t"/>
+                                    <constraint firstAttribute="height" constant="74" id="uPk-mu-ixR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nikita Zhevnitskiy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gds-7V-ixJ">
+                                <rect key="frame" x="99" y="69" width="170" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nikita.zhevnitskiy@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0wu-F4-KfU">
+                                <rect key="frame" x="99" y="92" width="196" height="18"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuK-xl-41h">
+                                <rect key="frame" x="0.0" y="128" width="375" height="529"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account_white" translatesAutoresizingMaskIntoConstraints="NO" id="OOd-h0-5f1">
+                                        <rect key="frame" x="20" y="24" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="7Xa-df-tAL"/>
+                                            <constraint firstAttribute="height" constant="48" id="ws4-tw-96u"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myd-Lv-lSt">
+                                        <rect key="frame" x="83" y="32" width="92" height="33"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="My porfolio">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_money_white" translatesAutoresizingMaskIntoConstraints="NO" id="Lnv-py-nht">
+                                        <rect key="frame" x="20" y="82" width="48" height="48"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-7W-chi">
+                                        <rect key="frame" x="83" y="90" width="137" height="33"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Currency market">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Lnv-py-nht" firstAttribute="top" secondItem="OOd-h0-5f1" secondAttribute="bottom" constant="10" id="Dyb-NW-aw2"/>
+                                    <constraint firstItem="ybK-7W-chi" firstAttribute="centerY" secondItem="Lnv-py-nht" secondAttribute="centerY" id="FHx-eo-ri2"/>
+                                    <constraint firstItem="Myd-Lv-lSt" firstAttribute="centerY" secondItem="OOd-h0-5f1" secondAttribute="centerY" id="Ggr-cT-fYu"/>
+                                    <constraint firstItem="Lnv-py-nht" firstAttribute="leading" secondItem="OOd-h0-5f1" secondAttribute="leading" id="J8P-7Y-ODi"/>
+                                    <constraint firstItem="Myd-Lv-lSt" firstAttribute="leading" secondItem="OOd-h0-5f1" secondAttribute="trailing" constant="15" id="JUn-Hs-cDm"/>
+                                    <constraint firstItem="Lnv-py-nht" firstAttribute="width" secondItem="OOd-h0-5f1" secondAttribute="width" id="P7U-lz-NEN"/>
+                                    <constraint firstItem="ybK-7W-chi" firstAttribute="leading" secondItem="Myd-Lv-lSt" secondAttribute="leading" id="bdg-Ne-Lr9"/>
+                                    <constraint firstItem="OOd-h0-5f1" firstAttribute="leading" secondItem="fuK-xl-41h" secondAttribute="leading" constant="20" id="f0A-ZL-MPo"/>
+                                    <constraint firstItem="OOd-h0-5f1" firstAttribute="top" secondItem="fuK-xl-41h" secondAttribute="top" constant="24" id="oC9-AC-cbR"/>
+                                    <constraint firstItem="Lnv-py-nht" firstAttribute="height" secondItem="OOd-h0-5f1" secondAttribute="height" id="qxw-ov-OeM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fuK-xl-41h" firstAttribute="leading" secondItem="cHx-jA-tEI" secondAttribute="leading" id="3OX-Wn-Qtd"/>
+                            <constraint firstItem="fuK-xl-41h" firstAttribute="trailing" secondItem="cHx-jA-tEI" secondAttribute="trailing" id="EVj-B9-Bf1"/>
+                            <constraint firstItem="cHx-jA-tEI" firstAttribute="bottom" secondItem="fuK-xl-41h" secondAttribute="bottom" constant="10" id="WU4-51-DcA"/>
+                            <constraint firstItem="fuK-xl-41h" firstAttribute="top" secondItem="qWd-1Q-FCJ" secondAttribute="bottom" constant="10" id="XJB-dt-8ZA"/>
+                            <constraint firstItem="qWd-1Q-FCJ" firstAttribute="leading" secondItem="cHx-jA-tEI" secondAttribute="leading" constant="10" id="bF3-ZG-twH"/>
+                            <constraint firstItem="gds-7V-ixJ" firstAttribute="centerY" secondItem="qWd-1Q-FCJ" secondAttribute="centerY" id="cZf-5Z-dRg"/>
+                            <constraint firstItem="gds-7V-ixJ" firstAttribute="leading" secondItem="qWd-1Q-FCJ" secondAttribute="trailing" constant="15" id="o2o-IY-4YD"/>
+                            <constraint firstItem="qWd-1Q-FCJ" firstAttribute="top" secondItem="cHx-jA-tEI" secondAttribute="top" constant="24" id="re6-dT-1uJ"/>
+                            <constraint firstItem="gds-7V-ixJ" firstAttribute="leading" secondItem="0wu-F4-KfU" secondAttribute="leading" id="vXG-uF-xA1"/>
+                            <constraint firstItem="0wu-F4-KfU" firstAttribute="top" secondItem="gds-7V-ixJ" secondAttribute="bottom" constant="-1" id="x37-jT-WQw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cHx-jA-tEI"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guI-ay-6Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="-284"/>
+            <point key="canvasLocation" x="716" y="-284.70764617691157"/>
         </scene>
         <!--PortfolioVC-->
         <scene sceneID="j48-ik-eT9">
@@ -101,5 +182,8 @@
     </scenes>
     <resources>
         <image name="coinBurger" width="40" height="40"/>
+        <image name="ic_account_white" width="48" height="48"/>
+        <image name="ic_money_white" width="48" height="48"/>
+        <image name="profile" width="192" height="192"/>
     </resources>
 </document>
