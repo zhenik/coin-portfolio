@@ -14,7 +14,7 @@
         <scene sceneID="Ku9-m5-uSP">
             <objects>
                 <viewController id="fZb-Pd-qvV" customClass="MenuVC" customModule="coin_portfolio" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Yyf-gC-plJ">
+                    <view key="view" contentMode="scaleToFill" id="Yyf-gC-plJ" customClass="GradientView" customModule="coin_portfolio" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -33,7 +33,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EW-IQ-OPp">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EW-IQ-OPp" customClass="GradientView" customModule="coin_portfolio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oo-4Y-SMf">

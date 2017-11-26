@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		108405EC7993999F69140846 /* Pods_coin_portfolioUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 494451455854CA7E21BF33D3 /* Pods_coin_portfolioUITests.framework */; };
 		246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E810C1FCB1740000738F9 /* MenuVC.swift */; };
+		246E810F1FCB1CFE000738F9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E810E1FCB1CFE000738F9 /* GradientView.swift */; };
 		24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B85E5B1FCB13F900BFF970 /* SWRevealViewController.m */; };
 		24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B85E601FCB170800BFF970 /* PortfolioVC.swift */; };
 		24CFF4AD1FCB0BCF00324AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4AC1FCB0BCF00324AAA /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		102C0C8D383398935A5A6F82 /* Pods-coin-portfolio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolio.release.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolio/Pods-coin-portfolio.release.xcconfig"; sourceTree = "<group>"; };
 		246E810C1FCB1740000738F9 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		246E810E1FCB1CFE000738F9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		24B85E591FCB13F800BFF970 /* coin-portfolio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "coin-portfolio-Bridging-Header.h"; sourceTree = "<group>"; };
 		24B85E5A1FCB13F900BFF970 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		24B85E5B1FCB13F900BFF970 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		24B85E5F1FCB16B200BFF970 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				246E810E1FCB1CFE000738F9 /* GradientView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			files = (
 				24CFF4B51FCB0BCF00324AAA /* coin_portfolio.xcdatamodeld in Sources */,
 				24CFF4AD1FCB0BCF00324AAA /* AppDelegate.swift in Sources */,
+				246E810F1FCB1CFE000738F9 /* GradientView.swift in Sources */,
 				24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */,
 				24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */,
 				246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */,
