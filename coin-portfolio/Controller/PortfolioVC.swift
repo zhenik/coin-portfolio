@@ -15,9 +15,12 @@ class PortfolioVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initSlideReveal()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         
+        initSlideReveal()
     }
     
     func initSlideReveal(){

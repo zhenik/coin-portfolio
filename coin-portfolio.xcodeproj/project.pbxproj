@@ -11,6 +11,10 @@
 		246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E810C1FCB1740000738F9 /* MenuVC.swift */; };
 		246E810F1FCB1CFE000738F9 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246E810E1FCB1CFE000738F9 /* GradientView.swift */; };
 		2488980E1FCD97BB0070B026 /* MarketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2488980D1FCD97BB0070B026 /* MarketVC.swift */; };
+		248898111FCDB5A50070B026 /* ApiDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248898101FCDB5A50070B026 /* ApiDataService.swift */; };
+		248898141FCDB6230070B026 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248898131FCDB6230070B026 /* Constants.swift */; };
+		248898161FCDB7EC0070B026 /* PortfolioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248898151FCDB7EC0070B026 /* PortfolioService.swift */; };
+		24B568BC1FCDC3F900D4E15D /* Valuta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B568BB1FCDC3F900D4E15D /* Valuta.swift */; };
 		24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24B85E5B1FCB13F900BFF970 /* SWRevealViewController.m */; };
 		24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B85E601FCB170800BFF970 /* PortfolioVC.swift */; };
 		24CFF4AD1FCB0BCF00324AAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4AC1FCB0BCF00324AAA /* AppDelegate.swift */; };
@@ -46,6 +50,10 @@
 		246E810C1FCB1740000738F9 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		246E810E1FCB1CFE000738F9 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2488980D1FCD97BB0070B026 /* MarketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketVC.swift; sourceTree = "<group>"; };
+		248898101FCDB5A50070B026 /* ApiDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataService.swift; sourceTree = "<group>"; };
+		248898131FCDB6230070B026 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		248898151FCDB7EC0070B026 /* PortfolioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioService.swift; sourceTree = "<group>"; };
+		24B568BB1FCDC3F900D4E15D /* Valuta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valuta.swift; sourceTree = "<group>"; };
 		24B85E591FCB13F800BFF970 /* coin-portfolio-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "coin-portfolio-Bridging-Header.h"; sourceTree = "<group>"; };
 		24B85E5A1FCB13F900BFF970 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		24B85E5B1FCB13F900BFF970 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
@@ -101,6 +109,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2488980F1FCDB5890070B026 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				248898101FCDB5A50070B026 /* ApiDataService.swift */,
+				248898151FCDB7EC0070B026 /* PortfolioService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		248898121FCDB6120070B026 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				248898131FCDB6230070B026 /* Constants.swift */,
+				24B568BB1FCDC3F900D4E15D /* Valuta.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		24B85E581FCB13BA00BFF970 /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				24B85E601FCB170800BFF970 /* PortfolioVC.swift */,
-				246E810C1FCB1740000738F9 /* MenuVC.swift */,
 				2488980D1FCD97BB0070B026 /* MarketVC.swift */,
+				246E810C1FCB1740000738F9 /* MenuVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -161,6 +187,8 @@
 		24CFF4AB1FCB0BCF00324AAA /* coin-portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				248898121FCDB6120070B026 /* Utils */,
+				2488980F1FCDB5890070B026 /* Services */,
 				24B85E5F1FCB16B200BFF970 /* View */,
 				24B85E5E1FCB16AC00BFF970 /* Controller */,
 				24B85E5D1FCB16A100BFF970 /* Model */,
@@ -499,12 +527,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				24CFF4B51FCB0BCF00324AAA /* coin_portfolio.xcdatamodeld in Sources */,
+				24B568BC1FCDC3F900D4E15D /* Valuta.swift in Sources */,
 				24CFF4AD1FCB0BCF00324AAA /* AppDelegate.swift in Sources */,
 				246E810F1FCB1CFE000738F9 /* GradientView.swift in Sources */,
 				24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */,
 				24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */,
 				246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */,
+				248898161FCDB7EC0070B026 /* PortfolioService.swift in Sources */,
+				248898111FCDB5A50070B026 /* ApiDataService.swift in Sources */,
 				2488980E1FCD97BB0070B026 /* MarketVC.swift in Sources */,
+				248898141FCDB6230070B026 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
