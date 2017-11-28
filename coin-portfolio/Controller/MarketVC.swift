@@ -13,6 +13,9 @@ class MarketVC: UIViewController {
     // Outlets
     @IBOutlet weak var menuBtn: UIButton!
     
+    // Data
+    var valutasMarket: [Valuta] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -32,7 +35,8 @@ class MarketVC: UIViewController {
     func updateValutas(){
         ApiDataService.instance.getTenValutas { (success) in
             if success {
-                print("success was very successful")
+                print(ApiDataService.instance.valutas)
+                self.valutasMarket = ApiDataService.instance.valutas
             }
         }
     }

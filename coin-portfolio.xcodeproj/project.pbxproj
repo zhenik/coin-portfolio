@@ -122,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				248898131FCDB6230070B026 /* Constants.swift */,
-				24B568BB1FCDC3F900D4E15D /* Valuta.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -140,6 +139,7 @@
 		24B85E5D1FCB16A100BFF970 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24B568BB1FCDC3F900D4E15D /* Valuta.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
