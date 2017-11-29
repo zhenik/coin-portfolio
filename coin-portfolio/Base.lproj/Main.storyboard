@@ -305,16 +305,17 @@
                     <navigationItem key="navigationItem" id="Kaz-2i-cjC"/>
                     <connections>
                         <outlet property="menuBtn" destination="jiA-Cd-fVX" id="tlU-ds-Icq"/>
+                        <outlet property="tableView" destination="zxd-Jp-qZ6" id="mze-cO-17A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0D-ZQ-V92" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2072.8000000000002" y="-47.226386806596707"/>
         </scene>
-        <!--View Controller-->
+        <!--Market ItemVC-->
         <scene sceneID="nd5-4R-yJY">
             <objects>
-                <viewController id="nqo-r3-Wxg" sceneMemberID="viewController">
+                <viewController id="nqo-r3-Wxg" customClass="MarketItemVC" customModule="coin_portfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5jb-ul-Prj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -324,7 +325,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1J-ME-ITc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2948" y="-48"/>
+            <point key="canvasLocation" x="2990" y="-48"/>
         </scene>
         <!--Portfolio-->
         <scene sceneID="YSn-Pa-F5J">
@@ -348,6 +349,7 @@
         <!--Market-->
         <scene sceneID="WQi-fL-ZEi">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IZq-ID-uOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="da1-pG-I8t" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Market" image="ic_tabbar_market" landscapeImage="ic_tabbar_market" largeContentSizeImage="ic_tabbar_market" id="wAf-a5-eFd"/>
                     <toolbarItems/>
@@ -360,7 +362,6 @@
                         <segue destination="ShK-2U-Nfw" kind="relationship" relationship="rootViewController" id="Hri-yQ-dob"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IZq-ID-uOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1238.4000000000001" y="-47.676161919040482"/>
         </scene>

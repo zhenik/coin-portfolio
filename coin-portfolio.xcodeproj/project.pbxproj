@@ -24,6 +24,7 @@
 		24CFF4BA1FCB0BCF00324AAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24CFF4B81FCB0BCF00324AAA /* LaunchScreen.storyboard */; };
 		24CFF4C51FCB0BCF00324AAA /* coin_portfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4C41FCB0BCF00324AAA /* coin_portfolioTests.swift */; };
 		24CFF4D01FCB0BCF00324AAA /* coin_portfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4CF1FCB0BCF00324AAA /* coin_portfolioUITests.swift */; };
+		24E7079C1FCEF9820047A50D /* MarketItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7079B1FCEF9820047A50D /* MarketItemVC.swift */; };
 		4F6C4B30D648380D1E5B4CAA /* Pods_coin_portfolio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83EB275700C7A01796628089 /* Pods_coin_portfolio.framework */; };
 		C558EB310516EA9EBB9ED51A /* Pods_coin_portfolioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19D3D70334C478634FF9CB8 /* Pods_coin_portfolioTests.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		24CFF4CB1FCB0BCF00324AAA /* coin-portfolioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "coin-portfolioUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		24CFF4CF1FCB0BCF00324AAA /* coin_portfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coin_portfolioUITests.swift; sourceTree = "<group>"; };
 		24CFF4D11FCB0BCF00324AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24E7079B1FCEF9820047A50D /* MarketItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemVC.swift; sourceTree = "<group>"; };
 		25BE0500475FD381BBAD9B7A /* Pods-coin-portfolioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolioUITests/Pods-coin-portfolioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FBAF1CFC6AEEB188B7725AC /* Pods-coin-portfolioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolioTests/Pods-coin-portfolioTests.release.xcconfig"; sourceTree = "<group>"; };
 		494451455854CA7E21BF33D3 /* Pods_coin_portfolioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coin_portfolioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +152,7 @@
 				24B85E601FCB170800BFF970 /* PortfolioVC.swift */,
 				2488980D1FCD97BB0070B026 /* MarketVC.swift */,
 				246E810C1FCB1740000738F9 /* MenuVC.swift */,
+				24E7079B1FCEF9820047A50D /* MarketItemVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				24CFF4AD1FCB0BCF00324AAA /* AppDelegate.swift in Sources */,
 				246E810F1FCB1CFE000738F9 /* GradientView.swift in Sources */,
 				24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */,
+				24E7079C1FCEF9820047A50D /* MarketItemVC.swift in Sources */,
 				24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */,
 				246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */,
 				248898161FCDB7EC0070B026 /* PortfolioService.swift in Sources */,
