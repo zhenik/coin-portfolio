@@ -8,18 +8,50 @@
 
 import Foundation
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
+
+struct currImage {
+    var id: String
+    var img: UIImage
+}
 
 class ApiDataService {
     static let instance = ApiDataService()
+    
     public private(set) var valutas: [Valuta]=[]
+    
+    private var images: [currImage] = []
+    var img: UIImage = UIImage()
+    
+    func getImages(completion: @escaping CompletionHandler){
+        for item in valutas{
+            print("\(IMG_API_URL)\(item.id).png")
+            Alamofire.request("\(IMG_API_URL)\(item.id).png").responseImage { response in
+                debugPrint(response)
+                if let image = response.result.value {
+                    self.img=image
+                    self.images.append(currImage(id: item.id, img: image))
+                }
+            }
+        }
+    }
+    
+    func getImage(id: String) -> UIImage{
+        for item in images {
+            if(item.id==id){
+                return item.img
+            }
+        }
+        return UIImage()
+    }
     
     func getTenValutas(completion: @escaping CompletionHandler){
         let header = [
             "Content-Type":"application/json; charset=utf-8"
         ]
         
-        Alamofire.request(BASE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).validate().responseJSON { (response) in
+        Alamofire.request(BASE_API_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error == nil {
                 guard let data = response.data else {return}
                 let json = JSON(data: data)
@@ -50,3 +82,4 @@ class ApiDataService {
         self.valutas=temp
     }
 }
+

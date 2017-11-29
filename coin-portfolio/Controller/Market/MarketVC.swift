@@ -53,14 +53,10 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("MarketTableViewCell", owner: self.tableView, options:nil)?.first as! MarketTableViewCell
-        cell.name.text = valutasMarket[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "marketCell", for: indexPath) as! mCell
+        cell.name.text = valutasMarket[indexPath.row].symbol
         cell.price.text = valutasMarket[indexPath.row].price_nok.roundedValue
-        
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! //1.
-//        let cellData = valutasMarket[indexPath.row] //2.
-//        cell.textLabel?.text = cellData.name //3.
-        
+        cell.img.image = ApiDataService.instance.getImage(id: valutasMarket[indexPath.row].id)
         return cell
     }
     

@@ -33,8 +33,14 @@ class PortfolioVC: UIViewController {
         ApiDataService.instance.getTenValutas { (success) in
             if success {
                 print("success")
+                ApiDataService.instance.getImages { (success) in
+                    if success {
+                        print("images loaded")
+                    }
+                }
             }
         }
+        
     }
     
 

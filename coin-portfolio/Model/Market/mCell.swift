@@ -1,5 +1,5 @@
 //
-//  MarketTableViewCell.swift
+//  mCell.swift
 //  coin-portfolio
 //
 //  Created by Nikita on 29/11/2017.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MarketTableViewCell: UITableViewCell {
+class mCell: UITableViewCell {
 
-    @IBOutlet weak var price: UILabel!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var price: UILabel!
     @IBOutlet weak var img: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +24,5 @@ class MarketTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

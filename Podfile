@@ -9,7 +9,9 @@ target 'coin-portfolio' do
 
   # Pods for coin-portfolio
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'SwiftyJSON'
+  
   
   target 'coin-portfolioTests' do
     inherit! :search_paths
