@@ -276,7 +276,7 @@
                                 <rect key="frame" x="0.0" y="109" width="375" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Alz-gS-esJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="marketCell" id="Alz-gS-esJ" customClass="MarketTableViewCell" customModule="coin_portfolio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Alz-gS-esJ" id="dR3-4n-YVN">
@@ -284,7 +284,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="nqo-r3-Wxg" kind="show" id="WEw-WR-foN"/>
+                                            <segue destination="nqo-r3-Wxg" kind="show" id="Fvk-9n-6f1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

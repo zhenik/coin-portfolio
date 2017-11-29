@@ -25,6 +25,8 @@
 		24CFF4C51FCB0BCF00324AAA /* coin_portfolioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4C41FCB0BCF00324AAA /* coin_portfolioTests.swift */; };
 		24CFF4D01FCB0BCF00324AAA /* coin_portfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4CF1FCB0BCF00324AAA /* coin_portfolioUITests.swift */; };
 		24E7079C1FCEF9820047A50D /* MarketItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7079B1FCEF9820047A50D /* MarketItemVC.swift */; };
+		24E707C91FCF114D0047A50D /* MarketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E707C71FCF114D0047A50D /* MarketTableViewCell.swift */; };
+		24E707CA1FCF114D0047A50D /* MarketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E707C81FCF114D0047A50D /* MarketTableViewCell.xib */; };
 		4F6C4B30D648380D1E5B4CAA /* Pods_coin_portfolio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83EB275700C7A01796628089 /* Pods_coin_portfolio.framework */; };
 		C558EB310516EA9EBB9ED51A /* Pods_coin_portfolioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19D3D70334C478634FF9CB8 /* Pods_coin_portfolioTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +75,8 @@
 		24CFF4CF1FCB0BCF00324AAA /* coin_portfolioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coin_portfolioUITests.swift; sourceTree = "<group>"; };
 		24CFF4D11FCB0BCF00324AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24E7079B1FCEF9820047A50D /* MarketItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemVC.swift; sourceTree = "<group>"; };
+		24E707C71FCF114D0047A50D /* MarketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableViewCell.swift; sourceTree = "<group>"; };
+		24E707C81FCF114D0047A50D /* MarketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketTableViewCell.xib; sourceTree = "<group>"; };
 		25BE0500475FD381BBAD9B7A /* Pods-coin-portfolioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolioUITests/Pods-coin-portfolioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FBAF1CFC6AEEB188B7725AC /* Pods-coin-portfolioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolioTests/Pods-coin-portfolioTests.release.xcconfig"; sourceTree = "<group>"; };
 		494451455854CA7E21BF33D3 /* Pods_coin_portfolioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coin_portfolioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +145,8 @@
 		24B85E5D1FCB16A100BFF970 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24E707CC1FCF11640047A50D /* Portfolio */,
+				24E707CB1FCF11580047A50D /* Market */,
 				24B568BB1FCDC3F900D4E15D /* Valuta.swift */,
 			);
 			path = Model;
@@ -149,10 +155,9 @@
 		24B85E5E1FCB16AC00BFF970 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				24B85E601FCB170800BFF970 /* PortfolioVC.swift */,
-				2488980D1FCD97BB0070B026 /* MarketVC.swift */,
+				24E707C41FCF10DA0047A50D /* Portfolio */,
+				24E707C31FCF10C70047A50D /* Market */,
 				246E810C1FCB1740000738F9 /* MenuVC.swift */,
-				24E7079B1FCEF9820047A50D /* MarketItemVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -160,6 +165,8 @@
 		24B85E5F1FCB16B200BFF970 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				24E707C61FCF10F40047A50D /* Portfolio */,
+				24E707C51FCF10EC0047A50D /* Market */,
 				246E810E1FCB1CFE000738F9 /* GradientView.swift */,
 			);
 			path = View;
@@ -222,6 +229,53 @@
 				24CFF4D11FCB0BCF00324AAA /* Info.plist */,
 			);
 			path = "coin-portfolioUITests";
+			sourceTree = "<group>";
+		};
+		24E707C31FCF10C70047A50D /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				2488980D1FCD97BB0070B026 /* MarketVC.swift */,
+				24E7079B1FCEF9820047A50D /* MarketItemVC.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		24E707C41FCF10DA0047A50D /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				24B85E601FCB170800BFF970 /* PortfolioVC.swift */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		24E707C51FCF10EC0047A50D /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				24E707C81FCF114D0047A50D /* MarketTableViewCell.xib */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		24E707C61FCF10F40047A50D /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		24E707CB1FCF11580047A50D /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				24E707C71FCF114D0047A50D /* MarketTableViewCell.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		24E707CC1FCF11640047A50D /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Portfolio;
 			sourceTree = "<group>";
 		};
 		3DBD0C659D7D363603F3E7C8 /* Frameworks */ = {
@@ -367,6 +421,7 @@
 				24CFF4BA1FCB0BCF00324AAA /* LaunchScreen.storyboard in Resources */,
 				24CFF4B71FCB0BCF00324AAA /* Assets.xcassets in Resources */,
 				24CFF4B21FCB0BCF00324AAA /* Main.storyboard in Resources */,
+				24E707CA1FCF114D0047A50D /* MarketTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +590,7 @@
 				246E810F1FCB1CFE000738F9 /* GradientView.swift in Sources */,
 				24B85E5C1FCB13F900BFF970 /* SWRevealViewController.m in Sources */,
 				24E7079C1FCEF9820047A50D /* MarketItemVC.swift in Sources */,
+				24E707C91FCF114D0047A50D /* MarketTableViewCell.swift in Sources */,
 				24B85E611FCB170800BFF970 /* PortfolioVC.swift in Sources */,
 				246E810D1FCB1740000738F9 /* MenuVC.swift in Sources */,
 				248898161FCDB7EC0070B026 /* PortfolioService.swift in Sources */,

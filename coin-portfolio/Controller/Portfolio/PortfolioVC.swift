@@ -1,30 +1,26 @@
 //
-//  MarketVC.swift
+//  PortfolioVC.swift
 //  coin-portfolio
 //
-//  Created by Nikita on 28/11/2017.
+//  Created by Nikita on 26/11/2017.
 //  Copyright © 2017 Nikita. All rights reserved.
 //
 
 import UIKit
 
-class MarketVC: UIViewController {
+class PortfolioVC: UIViewController {
 
     // Outlets
     @IBOutlet weak var menuBtn: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    
-    // Data
-    var valutasMarket: [Valuta] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.getMarketData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         initSlideReveal()
-        updateValutas()
     }
     
     func initSlideReveal(){
@@ -33,25 +29,13 @@ class MarketVC: UIViewController {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
-    func updateValutas(){
+    func getMarketData(){
         ApiDataService.instance.getTenValutas { (success) in
             if success {
-                print(ApiDataService.instance.valutas)
-                self.valutasMarket = ApiDataService.instance.valutas
+                print("success")
             }
         }
     }
-        
     
-//    init(id: String, name: String, percent_change_1h: String, percent_change_24h: String,  percent_change_7d: String, symbol: String, price_nok: String)
-    
-    func mockItems(){
-        var items: [Valuta] = []
-        let valuta1 = Valuta(id:"bitcoin", name:"BTC",percent_change_1h:"0.7",percent_change_24h: "0.21",percent_change_7d: "0.02",symbol:"BTC", price_nok: "80324.2")
-        items.append(valuta1)
-        
-        
-    }
-
 
 }

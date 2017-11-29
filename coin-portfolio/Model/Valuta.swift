@@ -34,3 +34,9 @@ extension Valuta : CustomStringConvertible {
         return "Valuta: { id: \(id), name: \(name), percent_change_1h: \(percent_change_1h),  percent_change_24h: \(percent_change_24h), percent_change_7d: \(percent_change_7d), symbol: \(symbol), price_nok: \(price_nok) }"
     }
 }
+
+extension Double {
+    var roundedValue: String {
+        return String(format: "%.0f", self)
+    }
+}
