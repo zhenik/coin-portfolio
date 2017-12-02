@@ -9,13 +9,43 @@
 import UIKit
 
 class MarketItemVC: UIViewController {
-
+    
+    // Outlets
+    @IBOutlet weak var cardViewMarket: UIView!
+    @IBOutlet weak var hourLbl: UILabel!
+    @IBOutlet weak var dayLbl: UILabel!
+    @IBOutlet weak var weekLbl: UILabel!
+    @IBOutlet weak var valutaNameLbl: UILabel!
+    @IBOutlet weak var valuteImg: UIImageView!
+    
+    
+    // Vars
     var previousVC = MarketVC()
     var selectedValuta : Valuta?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(selectedValuta)
+        initCardDesign()
+        initCardData()
+    }
+    
+    func initCardDesign(){
+        cardViewMarket.layer.cornerRadius = 3
+        cardViewMarket.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        cardViewMarket.layer.shadowOffset = CGSize(width: 0, height: 1.75)
+        cardViewMarket.layer.shadowRadius = 1.7
+        cardViewMarket.layer.shadowOpacity = 0.45
+    }
+    
+    func initCardData(){
+        if let valuta = selectedValuta {
+            valutaNameLbl.text=valuta.name
+            hourLbl.text="\(valuta.percent_change_1h)%"
+            dayLbl.text="\(valuta.percent_change_24h)%"
+            weekLbl.text="\(valuta.percent_change_7d)%"
+            valuteImg.image = ApiDataService.instance.getImage(id: valuta.id)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
