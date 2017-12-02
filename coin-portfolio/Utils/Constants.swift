@@ -15,3 +15,7 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let BASE_API_URL = "https://api.coinmarketcap.com/v1/ticker/?convert=NOK&limit=10"
 let IMG_API_URL = "https://files.coinmarketcap.com/static/img/coins/32x32/"
 
+
+// SEGUES
+let TO_MARKET_ITEM = "toMarketItem"
+

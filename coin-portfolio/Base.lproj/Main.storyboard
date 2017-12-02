@@ -331,7 +331,6 @@
                                             <outlet property="img" destination="NzI-RX-RIH" id="TtO-Xl-lh0"/>
                                             <outlet property="name" destination="TWC-K1-oep" id="Kex-sO-Jrd"/>
                                             <outlet property="price" destination="UFn-4W-XKr" id="8lX-8B-6SN"/>
-                                            <segue destination="nqo-r3-Wxg" kind="show" id="Fvk-9n-6f1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -353,6 +352,7 @@
                     <connections>
                         <outlet property="menuBtn" destination="jiA-Cd-fVX" id="tlU-ds-Icq"/>
                         <outlet property="tableView" destination="zxd-Jp-qZ6" id="mze-cO-17A"/>
+                        <segue destination="nqo-r3-Wxg" kind="show" identifier="toMarketItem" id="PMB-Bw-C7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0D-ZQ-V92" userLabel="First Responder" sceneMemberID="firstResponder"/>

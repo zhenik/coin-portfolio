@@ -20,6 +20,7 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         valutasMarket=ApiDataService.instance.valutas
     }
@@ -64,6 +65,23 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let valuta : Valuta = valutasMarket[indexPath.row]
+        print(valuta)
+        performSegue(withIdentifier: TO_MARKET_ITEM, sender: valuta)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let marketItemVC = segue.destination as? MarketItemVC {
+            if let valuta = sender as? Valuta {
+                marketItemVC.selectedValuta = valuta
+                marketItemVC.previousVC = self
+            }
+        }
+    }
+    
 //    TABLE VIEW END
 
 }
+
+

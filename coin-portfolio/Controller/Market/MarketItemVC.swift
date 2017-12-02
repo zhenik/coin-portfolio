@@ -10,8 +10,12 @@ import UIKit
 
 class MarketItemVC: UIViewController {
 
+    var previousVC = MarketVC()
+    var selectedValuta : Valuta?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(selectedValuta)
     }
     
     override func viewWillAppear(_ animated: Bool) {
