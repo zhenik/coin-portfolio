@@ -17,6 +17,8 @@ class MarketItemVC: UIViewController {
     @IBOutlet weak var weekLbl: UILabel!
     @IBOutlet weak var valutaNameLbl: UILabel!
     @IBOutlet weak var valuteImg: UIImageView!
+ 
+    @IBOutlet weak var priceLbl: UILabel!
     
     
     // Vars
@@ -45,6 +47,7 @@ class MarketItemVC: UIViewController {
             dayLbl.text="\(valuta.percent_change_24h)%"
             weekLbl.text="\(valuta.percent_change_7d)%"
             valuteImg.image = ApiDataService.instance.getImage(id: valuta.id)
+            priceLbl.text = valuta.price_nok.roundedValue
         }
     }
     

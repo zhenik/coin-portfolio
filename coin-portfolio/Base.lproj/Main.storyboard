@@ -14,6 +14,9 @@
             <string>HelveticaNeue</string>
             <string>HelveticaNeue-Bold</string>
         </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-LightItalic</string>
+        </array>
     </customFonts>
     <scenes>
         <!--MenuVC-->
@@ -370,8 +373,8 @@
                             <imageView userInteractionEnabled="NO" alpha="0.75" tag="-1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="erJ-nc-jpQ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ts7-hg-coz" colorLabel="IBBuiltInLabel-Red" propertyAccessControl="none">
-                                <rect key="frame" x="5" y="74" width="365" height="194"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ts7-hg-coz" colorLabel="IBBuiltInLabel-Red" propertyAccessControl="none">
+                                <rect key="frame" x="5" y="74" width="365" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOUR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hA8-SA-ww0">
                                         <rect key="frame" x="20" y="10" width="39" height="16"/>
@@ -429,6 +432,28 @@
                                             <constraint firstAttribute="width" constant="45" id="ETd-HA-onN"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Price per 1 in NOK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zaw-gB-fQq">
+                                        <rect key="frame" x="122" y="188" width="122" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHm-re-qQ0">
+                                        <rect key="frame" x="131" y="214" width="109" height="21"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXs-mK-7mm">
+                                        <rect key="frame" x="27" y="142" width="57" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="UPDATE"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nS-O4-7vw">
+                                        <rect key="frame" x="289" y="142" width="32" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="ADD"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -442,6 +467,10 @@
                                     <constraint firstItem="u1U-Ty-3yV" firstAttribute="centerX" secondItem="ts7-hg-coz" secondAttribute="centerX" id="Fik-RQ-JNE"/>
                                     <constraint firstItem="fNf-XR-Hv6" firstAttribute="top" secondItem="S6Y-hg-h2p" secondAttribute="bottom" constant="20" id="HeU-id-0xW"/>
                                     <constraint firstItem="50t-Ox-k2c" firstAttribute="top" secondItem="fNf-XR-Hv6" secondAttribute="bottom" constant="18" id="Lp8-EC-bJj"/>
+                                    <constraint firstItem="Zaw-gB-fQq" firstAttribute="centerX" secondItem="ts7-hg-coz" secondAttribute="centerX" id="OWP-Io-bw1"/>
+                                    <constraint firstItem="rHm-re-qQ0" firstAttribute="centerX" secondItem="ts7-hg-coz" secondAttribute="centerX" id="OmK-Xd-JNx"/>
+                                    <constraint firstItem="rHm-re-qQ0" firstAttribute="top" secondItem="Zaw-gB-fQq" secondAttribute="bottom" constant="8" id="Tbb-XC-P46"/>
+                                    <constraint firstItem="Zaw-gB-fQq" firstAttribute="top" secondItem="FsT-gu-52z" secondAttribute="bottom" constant="10" id="UGK-tQ-n5b"/>
                                     <constraint firstItem="jsO-Bf-ea7" firstAttribute="leading" secondItem="ts7-hg-coz" secondAttribute="leading" constant="20" id="XLD-Gw-Rjv"/>
                                     <constraint firstItem="hA8-SA-ww0" firstAttribute="leading" secondItem="ts7-hg-coz" secondAttribute="leading" constant="20" id="Xhp-ku-XVc"/>
                                     <constraint firstItem="u1U-Ty-3yV" firstAttribute="top" secondItem="ts7-hg-coz" secondAttribute="top" constant="10" id="a6J-id-urJ"/>
@@ -472,7 +501,7 @@
                             <constraint firstItem="erJ-nc-jpQ" firstAttribute="bottom" secondItem="dTM-Mr-TFF" secondAttribute="bottom" id="Vn9-dj-JpD"/>
                             <constraint firstItem="ts7-hg-coz" firstAttribute="top" secondItem="dTM-Mr-TFF" secondAttribute="top" constant="10" id="cT9-W8-WBD"/>
                             <constraint firstItem="ts7-hg-coz" firstAttribute="leading" secondItem="dTM-Mr-TFF" secondAttribute="leading" constant="5" id="oR4-dF-0iS"/>
-                            <constraint firstItem="dTM-Mr-TFF" firstAttribute="bottom" secondItem="ts7-hg-coz" secondAttribute="bottom" constant="350" id="vYm-jM-GV9"/>
+                            <constraint firstItem="dTM-Mr-TFF" firstAttribute="bottom" secondItem="ts7-hg-coz" secondAttribute="bottom" constant="300" id="vYm-jM-GV9"/>
                             <constraint firstItem="dTM-Mr-TFF" firstAttribute="trailing" secondItem="ts7-hg-coz" secondAttribute="trailing" constant="5" id="xUW-JB-XOn"/>
                             <constraint firstItem="erJ-nc-jpQ" firstAttribute="leading" secondItem="5jb-ul-Prj" secondAttribute="leading" id="yWo-uX-hEJ"/>
                         </constraints>
@@ -482,6 +511,7 @@
                         <outlet property="cardViewMarket" destination="ts7-hg-coz" id="RyQ-8s-M5S"/>
                         <outlet property="dayLbl" destination="tFA-pq-dM6" id="lMt-qx-iQi"/>
                         <outlet property="hourLbl" destination="jsO-Bf-ea7" id="W83-2s-9I9"/>
+                        <outlet property="priceLbl" destination="rHm-re-qQ0" id="j15-jl-tq1"/>
                         <outlet property="valutaNameLbl" destination="Jzv-GV-NUo" id="coy-uN-EQ3"/>
                         <outlet property="valuteImg" destination="FsT-gu-52z" id="ZvE-cc-f5s"/>
                         <outlet property="weekLbl" destination="fNf-XR-Hv6" id="wgm-n9-9OI"/>
