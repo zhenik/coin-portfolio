@@ -40,7 +40,7 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func updateValutas(){
         ApiDataService.instance.getTenValutas { (success) in
             if success {
-                print(ApiDataService.instance.valutas)
+//                print(ApiDataService.instance.valutas)
                 self.valutasMarket = ApiDataService.instance.valutas
                 self.tableView.reloadData()
             }
@@ -67,7 +67,7 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let valuta : Valuta = valutasMarket[indexPath.row]
-        print(valuta)
+//        print(valuta)
         performSegue(withIdentifier: TO_MARKET_ITEM, sender: valuta)
     }
     
