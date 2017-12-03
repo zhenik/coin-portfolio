@@ -26,9 +26,9 @@ class ApiDataService {
     
     func getImages(completion: @escaping CompletionHandler){
         for item in valutas{
-            print("\(IMG_API_URL)\(item.id).png")
+//            print("\(IMG_API_URL)\(item.id).png")
             Alamofire.request("\(IMG_API_URL)\(item.id).png").responseImage { response in
-                debugPrint(response)
+//                debugPrint(response)
                 if let image = response.result.value {
                     self.img=image
                     self.images.append(currImage(id: item.id, img: image))

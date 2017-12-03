@@ -150,16 +150,13 @@
                                 <rect key="frame" x="0.0" y="109" width="375" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Wp7-FE-WYw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioCell" id="Wp7-FE-WYw">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wp7-FE-WYw" id="UJF-LU-5Hj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="a1t-Id-cUY" kind="show" id="C50-DA-gRI"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -179,6 +176,7 @@
                     <navigationItem key="navigationItem" id="2UU-mX-Phn"/>
                     <connections>
                         <outlet property="menuBtn" destination="fgf-34-lUz" id="ZwI-6f-pRC"/>
+                        <outlet property="tableView" destination="9M5-Gb-wIc" id="dMf-bu-Kxn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTb-g5-cdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
