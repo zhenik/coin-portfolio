@@ -16,7 +16,7 @@ class Valuta {
     var percent_change_1h: Double=0
     var percent_change_7d: Double=0
     var symbol: String = ""
-    var price_nok: Double=0
+    var price_nok: Double = 0
     
     var amount : Double = 0
     var spend_money : Double = 0

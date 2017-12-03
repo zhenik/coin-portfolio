@@ -143,7 +143,6 @@
 		24B85E5D1FCB16A100BFF970 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				24E707CC1FCF11640047A50D /* Portfolio */,
 				24E707CB1FCF11580047A50D /* Market */,
 				24B568BB1FCDC3F900D4E15D /* Valuta.swift */,
 			);
@@ -163,8 +162,6 @@
 		24B85E5F1FCB16B200BFF970 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				24E707C61FCF10F40047A50D /* Portfolio */,
-				24E707C51FCF10EC0047A50D /* Market */,
 				246E810E1FCB1CFE000738F9 /* GradientView.swift */,
 			);
 			path = View;
@@ -246,33 +243,12 @@
 			path = Portfolio;
 			sourceTree = "<group>";
 		};
-		24E707C51FCF10EC0047A50D /* Market */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Market;
-			sourceTree = "<group>";
-		};
-		24E707C61FCF10F40047A50D /* Portfolio */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Portfolio;
-			sourceTree = "<group>";
-		};
 		24E707CB1FCF11580047A50D /* Market */ = {
 			isa = PBXGroup;
 			children = (
 				24E707CD1FCF1A5A0047A50D /* mCell.swift */,
 			);
 			path = Market;
-			sourceTree = "<group>";
-		};
-		24E707CC1FCF11640047A50D /* Portfolio */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Portfolio;
 			sourceTree = "<group>";
 		};
 		3DBD0C659D7D363603F3E7C8 /* Frameworks */ = {

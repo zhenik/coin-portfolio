@@ -121,10 +121,11 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         if let text = amountField.text {
             if let amount = Double(text){
                 print(amount)
+                let spend_money = amount * (selectedValuta?.price_nok)!
+                PortfolioService.instance.addToPortfolio(valuta: selectedValuta!, amount: amount, spend: spend_money)
             }
         }
-        
-        
+
         amountField.text = ""
     }
     
