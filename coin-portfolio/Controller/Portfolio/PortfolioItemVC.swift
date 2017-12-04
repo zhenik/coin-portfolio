@@ -16,6 +16,14 @@ class PortfolioItemVC: UIViewController {
     // Outlets
     @IBOutlet weak var cardViewItem: UIView!
     
+    
+    @IBOutlet weak var amountLbl: UILabel!
+    @IBOutlet weak var moneySpendLbl: UILabel!
+    @IBOutlet weak var trendLbl: UILabel!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var marketPriceLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initCardDesign()
@@ -50,5 +58,26 @@ class PortfolioItemVC: UIViewController {
     /*
      ******************************* card view END **********************************
      **/
+    
+    
+    
+    
+    
+    
+    
+    /*
+     ******************************* ACTIONS **********************************
+     **/
+    @IBAction func updateTapped(_ sender: Any) {
+    }
+    @IBAction func addMoreTapped(_ sender: Any) {
+    }
+    @IBAction func removeTapped(_ sender: Any) {
+    }
+    
+    
+    
+    
+   
     
 }
