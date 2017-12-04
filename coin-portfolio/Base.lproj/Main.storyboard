@@ -236,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTb-g5-cdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072.8000000000002" y="788.45577211394311"/>
+            <point key="canvasLocation" x="2073" y="1111"/>
         </scene>
         <!--Portfolio ItemVC-->
         <scene sceneID="giZ-bz-0iT">
@@ -404,12 +404,64 @@
                         <outlet property="marketPriceLbl" destination="k8F-Vz-WO1" id="LKA-eh-MkH"/>
                         <outlet property="moneySpendLbl" destination="xJl-I9-HrR" id="YIe-dZ-lru"/>
                         <outlet property="nameLbl" destination="MtB-n3-fsJ" id="5uo-ti-Ggq"/>
+                        <outlet property="popupImg" destination="nVk-rH-8rK" id="DOF-Te-Cp2"/>
+                        <outlet property="popupInputField" destination="gU7-5e-KX2" id="Tlh-hM-foz"/>
+                        <outlet property="popupView" destination="Srw-ae-MQL" id="WZ6-lr-JdG"/>
                         <outlet property="trendLbl" destination="fLx-mt-43W" id="I4V-X8-YIB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bc-qO-MXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="Srw-ae-MQL" userLabel="Popup">
+                    <rect key="frame" x="0.0" y="0.0" width="288" height="228"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add item to portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XsT-07-VyA">
+                            <rect key="frame" x="61" y="8" width="167.5" height="20"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jx-yb-5na">
+                            <rect key="frame" x="128" y="147" width="32" height="30"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                            <state key="normal" title="ADD"/>
+                            <connections>
+                                <action selector="closePopup:" destination="nqo-r3-Wxg" eventType="touchUpInside" id="8BE-gS-qKh"/>
+                                <action selector="popupAddTapped:" destination="a1t-Id-cUY" eventType="touchUpInside" id="89O-Kv-kEj"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nVk-rH-8rK">
+                            <rect key="frame" x="128" y="36" width="32" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="32" id="Ebh-ll-0fH"/>
+                                <constraint firstAttribute="height" constant="32" id="e4L-x1-wCn"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gU7-5e-KX2">
+                            <rect key="frame" x="99" y="100" width="90" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="V3g-1N-Crm"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="XsT-07-VyA" firstAttribute="top" secondItem="ONs-Jz-r7B" secondAttribute="top" constant="8" id="FJC-6b-4UK"/>
+                        <constraint firstItem="9Jx-yb-5na" firstAttribute="top" secondItem="gU7-5e-KX2" secondAttribute="bottom" constant="18" id="G28-dl-fWC"/>
+                        <constraint firstItem="XsT-07-VyA" firstAttribute="centerX" secondItem="ONs-Jz-r7B" secondAttribute="centerX" id="Qsm-4v-CFz"/>
+                        <constraint firstItem="nVk-rH-8rK" firstAttribute="centerX" secondItem="ONs-Jz-r7B" secondAttribute="centerX" id="YJN-bS-Ekp"/>
+                        <constraint firstItem="gU7-5e-KX2" firstAttribute="centerX" secondItem="ONs-Jz-r7B" secondAttribute="centerX" id="ccC-Xa-TqH"/>
+                        <constraint firstItem="9Jx-yb-5na" firstAttribute="centerX" secondItem="ONs-Jz-r7B" secondAttribute="centerX" id="pbe-oV-ktc"/>
+                        <constraint firstItem="gU7-5e-KX2" firstAttribute="top" secondItem="nVk-rH-8rK" secondAttribute="bottom" constant="32" id="tBN-yu-811"/>
+                        <constraint firstItem="nVk-rH-8rK" firstAttribute="top" secondItem="XsT-07-VyA" secondAttribute="bottom" constant="8" id="uCb-nV-McS"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="ONs-Jz-r7B"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="2901.5999999999999" y="789.35532233883066"/>
+            <point key="canvasLocation" x="2906" y="1110"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -746,12 +798,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s1J-ME-ITc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="NQ8-GB-8kN">
+                <view contentMode="scaleToFill" id="NQ8-GB-8kN" userLabel="Popup">
                     <rect key="frame" x="0.0" y="0.0" width="288" height="228"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add item to portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGd-hz-WtF">
-                            <rect key="frame" x="61" y="7" width="167.5" height="20"/>
+                            <rect key="frame" x="61" y="8" width="167.5" height="20"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -765,14 +817,14 @@
                             </connections>
                         </button>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sw7-1g-tB9">
-                            <rect key="frame" x="128" y="35" width="32" height="32"/>
+                            <rect key="frame" x="128" y="36" width="32" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="MGt-Ki-i2e"/>
                                 <constraint firstAttribute="width" constant="32" id="mbT-Ta-Rcm"/>
                             </constraints>
                         </imageView>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iK3-tg-BvU">
-                            <rect key="frame" x="99" y="99" width="90" height="30"/>
+                            <rect key="frame" x="99" y="100" width="90" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="90" id="4j9-tW-wwc"/>
                             </constraints>
@@ -787,7 +839,7 @@
                         <constraint firstItem="iK3-tg-BvU" firstAttribute="centerX" secondItem="Mb1-CT-zKa" secondAttribute="centerX" id="56T-0V-hjs"/>
                         <constraint firstItem="KGd-hz-WtF" firstAttribute="centerX" secondItem="Mb1-CT-zKa" secondAttribute="centerX" id="6dL-8Z-t5n"/>
                         <constraint firstItem="sw7-1g-tB9" firstAttribute="top" secondItem="KGd-hz-WtF" secondAttribute="bottom" constant="8" id="Pef-nO-Ihl"/>
-                        <constraint firstItem="KGd-hz-WtF" firstAttribute="top" secondItem="Mb1-CT-zKa" secondAttribute="top" constant="7" id="VSz-qR-vDY"/>
+                        <constraint firstItem="KGd-hz-WtF" firstAttribute="top" secondItem="Mb1-CT-zKa" secondAttribute="top" constant="8" id="VSz-qR-vDY"/>
                         <constraint firstItem="iK3-tg-BvU" firstAttribute="top" secondItem="sw7-1g-tB9" secondAttribute="bottom" constant="32" id="YXZ-e3-gqu"/>
                         <constraint firstItem="519-Jj-SoS" firstAttribute="top" secondItem="iK3-tg-BvU" secondAttribute="bottom" constant="18" id="Zrd-xN-Fbf"/>
                         <constraint firstItem="sw7-1g-tB9" firstAttribute="centerX" secondItem="Mb1-CT-zKa" secondAttribute="centerX" id="yBf-Ur-nE6"/>
@@ -814,7 +866,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UjD-kD-S17" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="788"/>
+            <point key="canvasLocation" x="1238" y="1112"/>
         </scene>
         <!--Market-->
         <scene sceneID="WQi-fL-ZEi">

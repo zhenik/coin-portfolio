@@ -8,21 +8,26 @@
 
 import UIKit
 
-class PortfolioItemVC: UIViewController {
+class PortfolioItemVC: UIViewController, UITextFieldDelegate {
     
     // Vars
     var previousVC = PortfolioVC()
     var selectedItem : PortfolioItem?
     // Outlets
     @IBOutlet weak var cardViewItem: UIView!
-    
-    
+    // Outlets: data
     @IBOutlet weak var amountLbl: UILabel!
     @IBOutlet weak var moneySpendLbl: UILabel!
     @IBOutlet weak var trendLbl: UILabel!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var marketPriceLbl: UILabel!
+    // Outlets: popup
+    
+    @IBOutlet var popupView: UIView!
+    @IBOutlet weak var popupImg: UIImageView!
+    @IBOutlet weak var popupInputField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +95,54 @@ class PortfolioItemVC: UIViewController {
      ******************************* card view END **********************************
      **/
     
+    /*
+     ******************************* popup START **********************************
+     * https://youtu.be/CXvOS6hYADc
+     **/
+    func initPopupDesign(){
+        
+        popupInputField.delegate = self
+        
+        if let imgData = selectedItem?.image {
+            popupImg.image = UIImage(data: imgData)
+        }
+        popupView.layer.cornerRadius = 3
+        popupView.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        popupView.layer.shadowOffset = CGSize(width: 0, height: 1.75)
+        popupView.layer.shadowRadius = 1.7
+        popupView.layer.shadowOpacity = 0.45
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let charSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: charSet)
+    }
+    
+    func animateIn() {
+        self.view.addSubview(popupView)
+        popupView.center = self.view.center
+        popupView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        popupView.alpha = 0
+        UIView.animate(withDuration: 0.4) {
+            // animate effects
+            self.popupView.alpha = 1
+            self.popupView.transform = CGAffineTransform.identity
+        }
+    }
+    
+    func animateOut(){
+        UIView.animate(withDuration: 0.4, animations: {
+            self.popupView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        }) { (success: Bool) in
+            self.popupView.removeFromSuperview()
+        }
+    }
+    
+    /*
+     ******************************* popup END **********************************
+     **/
+    
     
     
     
@@ -108,10 +161,6 @@ class PortfolioItemVC: UIViewController {
         }
     }
     
-    @IBAction func addMoreTapped(_ sender: Any) {
-        
-    }
-    
     @IBAction func removeTapped(_ sender: Any) {
         if let itemId = selectedItem?.id {
             CoreDataService.instance.deleteItemById(id: itemId)
@@ -119,6 +168,37 @@ class PortfolioItemVC: UIViewController {
             previousVC.tableView.reloadData()
         }
     }
+    /*
+     ******************************* ACTIONS **********************************
+     **/
+    
+    
+    // ******** popup ACTIONS *******
+    
+    @IBAction func addMoreTapped(_ sender: Any) {
+        animateIn()
+    }
+    
+    @IBAction func popupAddTapped(_ sender: Any) {
+        animateOut()
+        guard let id = selectedItem?.id else {return}
+        guard let valuta = ApiDataService.instance.getValutaById(id: id) else {return}
+        
+        if let text = popupInputField.text {
+            print(text)
+            if let amount = Double(text) {
+                print(amount)
+                let spend_money = amount * (valuta.price_nok)
+                CoreDataService.instance.addToPortfolio(valuta: valuta, amount: amount, spend: spend_money)
+            }
+        }
+        
+        popupInputField.text = ""
+        initCardData()
+    }
+    
+    
+    
     
     
     
