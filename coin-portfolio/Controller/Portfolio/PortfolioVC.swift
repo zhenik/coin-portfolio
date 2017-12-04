@@ -34,6 +34,7 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewDidAppear(_ animated: Bool) {
         initSlideReveal()
         loadPortfolio()
+        
     }
     
     func initSlideReveal(){
@@ -90,7 +91,8 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func loadPortfolio() {
-        self.portfolioItems = PortfolioService.instance.getPortfolioItems()
+//        self.portfolioItems = PortfolioService.instance.getPortfolioItems()
+        self.portfolioItems = CoreDataService.instance.getPortfolioItems()
 //        valutasMarket.append(Valuta(id:"bitcoin",name: "name", percent_change_1h: "1.1", percent_change_24h: "1.2", percent_change_7d: "-2.2", symbol: "bitcoin", price_nok: "123123"))
 //        valutasMarket.append(Valuta(id:"bitcoin",name: "another name", percent_change_1h: "1.1", percent_change_24h: "1.2", percent_change_7d: "-2.2", symbol: "bitcoin", price_nok: "123123"))
         self.tableView.reloadData()
