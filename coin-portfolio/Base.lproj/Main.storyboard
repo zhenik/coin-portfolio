@@ -118,7 +118,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3EW-IQ-OPp" customClass="GradientView" customModule="coin_portfolio" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Oo-4Y-SMf">
                                         <rect key="frame" x="152" y="30" width="72" height="23"/>
@@ -127,22 +127,38 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgf-34-lUz">
-                                        <rect key="frame" x="12" y="32" width="24" height="18"/>
+                                        <rect key="frame" x="12" y="29" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="18" id="Dap-aS-3gw"/>
+                                            <constraint firstAttribute="height" constant="24" id="Dap-aS-3gw"/>
                                             <constraint firstAttribute="width" constant="24" id="LJ9-ai-ipg"/>
                                         </constraints>
                                         <state key="normal" image="coinBurger">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1x-9k-SL7" userLabel="Update Btn">
+                                        <rect key="frame" x="339" y="29.5" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="ITZ-Im-1PU"/>
+                                            <constraint firstAttribute="width" constant="24" id="Ujd-lo-cVm"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_refresh_white">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateTapped:" destination="65u-7w-hcD" eventType="touchUpInside" id="By7-YR-iTy"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33333333333333331" green="0.36862745098039218" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="fgf-34-lUz" secondAttribute="bottom" constant="12" id="B4a-Nm-3kQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="I1x-9k-SL7" secondAttribute="trailing" constant="12" id="GDg-vT-MYs"/>
+                                    <constraint firstItem="I1x-9k-SL7" firstAttribute="centerY" secondItem="3Oo-4Y-SMf" secondAttribute="centerY" id="JdE-Nk-U2L"/>
                                     <constraint firstItem="fgf-34-lUz" firstAttribute="leading" secondItem="3EW-IQ-OPp" secondAttribute="leading" constant="12" id="O95-9c-CaW"/>
                                     <constraint firstItem="3Oo-4Y-SMf" firstAttribute="top" secondItem="3EW-IQ-OPp" secondAttribute="top" constant="30" id="adb-KP-KDd"/>
                                     <constraint firstItem="3Oo-4Y-SMf" firstAttribute="centerY" secondItem="fgf-34-lUz" secondAttribute="centerY" id="eYn-pn-LvP"/>
+                                    <constraint firstAttribute="bottom" secondItem="I1x-9k-SL7" secondAttribute="bottom" constant="12" id="pK2-g6-zSu"/>
                                     <constraint firstItem="3Oo-4Y-SMf" firstAttribute="centerX" secondItem="3EW-IQ-OPp" secondAttribute="centerX" id="yRQ-qx-qFr"/>
                                 </constraints>
                             </view>
@@ -281,7 +297,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kH2-2S-FRF" customClass="GradientView" customModule="coin_portfolio" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kac-mf-V8C">
                                         <rect key="frame" x="152" y="30" width="72" height="23"/>
@@ -290,24 +306,27 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiA-Cd-fVX">
-                                        <rect key="frame" x="12" y="32" width="24" height="18"/>
+                                        <rect key="frame" x="12" y="29" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="fpz-oL-VwU"/>
-                                            <constraint firstAttribute="height" constant="18" id="jHP-TD-pMk"/>
+                                            <constraint firstAttribute="height" constant="24" id="jHP-TD-pMk"/>
                                         </constraints>
                                         <state key="normal" image="coinBurger">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-8F-fgb">
-                                        <rect key="frame" x="339" y="32" width="24" height="18"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-8F-fgb" userLabel="Update Btn">
+                                        <rect key="frame" x="339" y="29" width="24" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="24" id="2R2-IA-N66"/>
-                                            <constraint firstAttribute="height" constant="18" id="fau-hc-0hk"/>
+                                            <constraint firstAttribute="height" constant="24" id="6Z4-gZ-B2n"/>
+                                            <constraint firstAttribute="width" constant="24" id="eyg-gD-ZJp"/>
                                         </constraints>
-                                        <state key="normal" image="coinBurger">
+                                        <state key="normal" image="ic_refresh_white">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="updateTapped:" destination="ShK-2U-Nfw" eventType="touchUpInside" id="fky-AM-qFr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.36862745099999999" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -661,6 +680,7 @@
         <image name="coinBurger" width="40" height="40"/>
         <image name="ic_account_white" width="48" height="48"/>
         <image name="ic_money_white" width="48" height="48"/>
+        <image name="ic_refresh_white" width="40" height="40"/>
         <image name="ic_tabbar_account" width="24" height="24"/>
         <image name="ic_tabbar_market" width="24" height="24"/>
         <image name="profile" width="192" height="192"/>

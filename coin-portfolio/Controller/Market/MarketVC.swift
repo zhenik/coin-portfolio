@@ -9,7 +9,7 @@
 import UIKit
 
 class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     // Outlets
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -36,19 +36,7 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
     
-    //TODO: refresh on pull
-    func updateValutas(){
-        ApiDataService.instance.getTenValutas { (success) in
-            if success {
-//                print(ApiDataService.instance.valutas)
-                self.valutasMarket = ApiDataService.instance.valutas
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-//    TABLE VIEW START
-    
+    //    TABLE VIEW START
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return valutasMarket.count
     }
@@ -67,7 +55,7 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let valuta : Valuta = valutasMarket[indexPath.row]
-//        print(valuta)
+        //        print(valuta)
         performSegue(withIdentifier: TO_MARKET_ITEM, sender: valuta)
     }
     
@@ -79,8 +67,17 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+    //    TABLE VIEW END
     
-//    TABLE VIEW END
+    @IBAction func updateTapped(_ sender: Any) {
+        ApiDataService.instance.getTenValutas { (success) in
+            if success {
+                self.valutasMarket = ApiDataService.instance.valutas
+                self.tableView.reloadData()
+                print("DATA RELOADED")
+            }
+        }
+    }
 
 }
 

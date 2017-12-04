@@ -52,6 +52,7 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         if let imageCurrency = val.image {
            cell.img.image = UIImage(data: imageCurrency)
         }
+        
         if ApiDataService.instance.getTrend(item: val) {
             cell.amount.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         } else {
@@ -71,6 +72,15 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func loadPortfolio() {
         self.portfolioItems = CoreDataService.instance.getPortfolioItems()
         self.tableView.reloadData()
+    }
+    
+    @IBAction func updateTapped(_ sender: Any) {
+        ApiDataService.instance.getTenValutas { (success) in
+            if success {
+                self.tableView.reloadData()
+                print("DATA RELOADED")
+            }
+        }
     }
     
     
