@@ -27,6 +27,7 @@ class PortfolioItemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initCardDesign()
+        initCardData()
     }
     
     /*
@@ -54,7 +55,37 @@ class PortfolioItemVC: UIViewController {
         cardViewItem.layer.shadowRadius = 1.7
         cardViewItem.layer.shadowOpacity = 0.45
     }
-    
+    func initCardData(){
+        if let item = selectedItem {
+            
+            amountLbl.text = item.amount.roundedValue
+            moneySpendLbl.text = item.spend_money.roundedValue
+            nameLbl.text = item.name
+            
+            if let image = item.image {
+                img.image = UIImage(data: image)
+            }
+            
+            // trend & marketPrice
+            if let itemId = item.id {
+                if let marketValuta = ApiDataService.instance.getValutaById(id: itemId) {
+                    marketPriceLbl.text = marketValuta.price_nok.roundedValue
+                    
+                    let sellPrice = item.amount * marketValuta.price_nok
+                    let trend = sellPrice - item.spend_money
+                    
+                    
+                    if sellPrice >= item.spend_money {
+                        trendLbl.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                        trendLbl.text = "+\(trend.roundedValue)"
+                    } else {
+                        trendLbl.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+                        trendLbl.text = "\(trend.roundedValue)"
+                    }
+                }
+            }
+        }
+    }
     /*
      ******************************* card view END **********************************
      **/
