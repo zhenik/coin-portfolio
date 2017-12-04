@@ -17,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        ApiDataService.instance.getTenValutas { (success) in
+            if success {
+                print("success")
+                ApiDataService.instance.getImages { (success) in
+                    if success {
+                        print("images loaded")
+                    }
+                }
+            }
+        }
+        
+        
+        
+        
         return true
     }
 

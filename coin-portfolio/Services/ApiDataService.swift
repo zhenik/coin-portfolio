@@ -81,5 +81,25 @@ class ApiDataService {
         
         self.valutas=temp
     }
+    
+    func getValutaById(id: String) -> Valuta? {
+        for item in valutas {
+            if item.id == id {
+                return item
+            }
+        }
+        return nil
+    }
+    
+    // True -> positive trend, false -> negative trend
+    // return true if cellPrice > spend_money
+    func getTrend(item : PortfolioItem) -> Bool {
+        guard let valuta = getValutaById(id: item.id!) else {return false}
+        let sellPrice = item.amount * valuta.price_nok
+        if sellPrice >= item.spend_money {
+            return true
+        }
+        return false
+    }
 }
 

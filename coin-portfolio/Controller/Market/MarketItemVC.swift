@@ -67,8 +67,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
     func initPopupDesign(){
         // text field setup
         amountField.delegate = self
-        
-        
+
         popupImg.image = valuteImg.image
         popUp.layer.cornerRadius = 3
         popUp.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -115,14 +114,14 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         self.addItemToPortfolio()
         
     }
-    
 //    POPUP END
+    
+    
     func addItemToPortfolio() {
         if let text = amountField.text {
             if let amount = Double(text){
                 print(amount)
                 let spend_money = amount * (selectedValuta?.price_nok)!
-//                PortfolioService.instance.addToPortfolio(valuta: selectedValuta!, amount: amount, spend: spend_money)
                 CoreDataService.instance.addToPortfolio(valuta: selectedValuta!, amount: amount, spend: spend_money)
             }
         }
@@ -130,5 +129,25 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         amountField.text = ""
     }
     
+    
+    @IBAction func updateCardData(_ sender: Any) {
+        updateValutas()
+    }
+    
+    func updateValutas(){
+        print("previous state:  \(selectedValuta)")
+        
+        ApiDataService.instance.getTenValutas { (success) in
+            if success {
+                guard let id = self.selectedValuta?.id else {return}
+                // update current valuta
+                self.selectedValuta = ApiDataService.instance.getValutaById(id: id)
+                // refresh view
+                self.initCardData()
+                print("new state:  \(self.selectedValuta)")
+            }
+        }
+        
+    }
     
 }

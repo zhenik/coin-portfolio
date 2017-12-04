@@ -20,7 +20,7 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.initMarketData()   //TODO: move to app delegate
+//        self.initMarketData()   //TODO: move to app delegate
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -62,6 +62,12 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.name.text = val.name
         cell.amount.text = val.amount.roundedValue
         cell.img.image = ApiDataService.instance.getImage(id: val.id!)
+        
+        if ApiDataService.instance.getTrend(item: val) {
+            cell.amount.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        } else {
+            cell.amount.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        }
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,19 +80,18 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     //    TABLE VIEW END
     
     
-    func initMarketData(){
-        ApiDataService.instance.getTenValutas { (success) in
-            if success {
-                print("success")
-                ApiDataService.instance.getImages { (success) in
-                    if success {
-                        print("images loaded")
-                    }
-                }
-            }
-        }
-        
-    }
+//    func initMarketData(){
+//        ApiDataService.instance.getTenValutas { (success) in
+//            if success {
+//                print("success")
+//                ApiDataService.instance.getImages { (success) in
+//                    if success {
+//                        print("images loaded")
+//                    }
+//                }
+//            }
+//        }
+//    }
     
     func loadPortfolio() {
         self.portfolioItems = CoreDataService.instance.getPortfolioItems()
