@@ -100,10 +100,24 @@ class PortfolioItemVC: UIViewController {
      ******************************* ACTIONS **********************************
      **/
     @IBAction func updateTapped(_ sender: Any) {
+        ApiDataService.instance.getTenValutas { (success) in
+            if success {
+                // refresh view
+                self.initCardData()
+            }
+        }
     }
+    
     @IBAction func addMoreTapped(_ sender: Any) {
+        
     }
+    
     @IBAction func removeTapped(_ sender: Any) {
+        if let itemId = selectedItem?.id {
+            CoreDataService.instance.deleteItemById(id: itemId)
+            navigationController?.popViewController(animated: true)
+            previousVC.tableView.reloadData()
+        }
     }
     
     
