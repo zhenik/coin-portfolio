@@ -24,10 +24,6 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        
-        
-        
-        
     }
     
     // REVEAL setup START
@@ -61,9 +57,11 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         return portfolioItems.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "portfolioCell", for: indexPath) as! pCell
         let val = portfolioItems[indexPath.row]
-        cell.textLabel?.text = val.name
+        cell.name.text = val.name
+        cell.amount.text = val.amount.roundedValue
+        cell.img.image = ApiDataService.instance.getImage(id: val.id!)
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -91,12 +89,10 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     
     func loadPortfolio() {
-//        self.portfolioItems = PortfolioService.instance.getPortfolioItems()
         self.portfolioItems = CoreDataService.instance.getPortfolioItems()
-//        valutasMarket.append(Valuta(id:"bitcoin",name: "name", percent_change_1h: "1.1", percent_change_24h: "1.2", percent_change_7d: "-2.2", symbol: "bitcoin", price_nok: "123123"))
-//        valutasMarket.append(Valuta(id:"bitcoin",name: "another name", percent_change_1h: "1.1", percent_change_24h: "1.2", percent_change_7d: "-2.2", symbol: "bitcoin", price_nok: "123123"))
         self.tableView.reloadData()
     }
+    
     
 
 }

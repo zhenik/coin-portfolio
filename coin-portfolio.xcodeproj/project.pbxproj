@@ -26,6 +26,7 @@
 		24CFF4D01FCB0BCF00324AAA /* coin_portfolioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CFF4CF1FCB0BCF00324AAA /* coin_portfolioUITests.swift */; };
 		24E7079C1FCEF9820047A50D /* MarketItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E7079B1FCEF9820047A50D /* MarketItemVC.swift */; };
 		24E707CE1FCF1A5A0047A50D /* mCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E707CD1FCF1A5A0047A50D /* mCell.swift */; };
+		24E8A8FD1FD58C780053D158 /* pCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24E8A8FC1FD58C780053D158 /* pCell.swift */; };
 		4F6C4B30D648380D1E5B4CAA /* Pods_coin_portfolio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83EB275700C7A01796628089 /* Pods_coin_portfolio.framework */; };
 		C558EB310516EA9EBB9ED51A /* Pods_coin_portfolioTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B19D3D70334C478634FF9CB8 /* Pods_coin_portfolioTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		24CFF4D11FCB0BCF00324AAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24E7079B1FCEF9820047A50D /* MarketItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemVC.swift; sourceTree = "<group>"; };
 		24E707CD1FCF1A5A0047A50D /* mCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mCell.swift; sourceTree = "<group>"; };
+		24E8A8FC1FD58C780053D158 /* pCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pCell.swift; sourceTree = "<group>"; };
 		25BE0500475FD381BBAD9B7A /* Pods-coin-portfolioUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolioUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolioUITests/Pods-coin-portfolioUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FBAF1CFC6AEEB188B7725AC /* Pods-coin-portfolioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coin-portfolioTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-coin-portfolioTests/Pods-coin-portfolioTests.release.xcconfig"; sourceTree = "<group>"; };
 		494451455854CA7E21BF33D3 /* Pods_coin_portfolioUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coin_portfolioUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +145,7 @@
 		24B85E5D1FCB16A100BFF970 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				24E8A8FC1FD58C780053D158 /* pCell.swift */,
 				24E707CB1FCF11580047A50D /* Market */,
 				24B568BB1FCDC3F900D4E15D /* Valuta.swift */,
 			);
@@ -556,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E8A8FD1FD58C780053D158 /* pCell.swift in Sources */,
 				247E25D11FD56701007A3250 /* CoreDataService.swift in Sources */,
 				24CFF4B51FCB0BCF00324AAA /* coin_portfolio.xcdatamodeld in Sources */,
 				24B568BC1FCDC3F900D4E15D /* Valuta.swift in Sources */,

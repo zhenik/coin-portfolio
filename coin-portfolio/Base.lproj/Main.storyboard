@@ -150,13 +150,49 @@
                                 <rect key="frame" x="0.0" y="109" width="375" height="509"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioCell" id="Wp7-FE-WYw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioCell" id="Wp7-FE-WYw" customClass="pCell" customModule="coin_portfolio" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wp7-FE-WYw" id="UJF-LU-5Hj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4m-16-rKj">
+                                                    <rect key="frame" x="15" y="5" width="32" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="YcP-Lg-yJs"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VIZ-O3-4Hf">
+                                                    <rect key="frame" x="57" y="12" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luh-Nk-BZI">
+                                                    <rect key="frame" x="302" y="11" width="58" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VIZ-O3-4Hf" firstAttribute="centerY" secondItem="D4m-16-rKj" secondAttribute="centerY" id="JCi-KP-1A7"/>
+                                                <constraint firstItem="VIZ-O3-4Hf" firstAttribute="leading" secondItem="D4m-16-rKj" secondAttribute="trailing" constant="10" id="NKJ-bU-uOl"/>
+                                                <constraint firstAttribute="bottom" secondItem="D4m-16-rKj" secondAttribute="bottom" constant="5" id="Q3W-J2-Aus"/>
+                                                <constraint firstAttribute="bottom" secondItem="luh-Nk-BZI" secondAttribute="bottom" constant="11" id="SCG-iP-mqd"/>
+                                                <constraint firstItem="D4m-16-rKj" firstAttribute="centerY" secondItem="UJF-LU-5Hj" secondAttribute="centerY" id="USp-Dy-CN7"/>
+                                                <constraint firstItem="D4m-16-rKj" firstAttribute="leading" secondItem="UJF-LU-5Hj" secondAttribute="leading" constant="15" id="dCa-8x-NPi"/>
+                                                <constraint firstItem="D4m-16-rKj" firstAttribute="top" secondItem="UJF-LU-5Hj" secondAttribute="top" constant="5" id="nYY-2v-Ytz"/>
+                                                <constraint firstAttribute="trailing" secondItem="luh-Nk-BZI" secondAttribute="trailing" constant="15" id="sMd-zL-rzM"/>
+                                                <constraint firstItem="luh-Nk-BZI" firstAttribute="top" secondItem="UJF-LU-5Hj" secondAttribute="top" constant="11" id="tgQ-Fd-dss"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amount" destination="luh-Nk-BZI" id="mlH-9m-cqd"/>
+                                            <outlet property="img" destination="D4m-16-rKj" id="jgW-Zc-Evt"/>
+                                            <outlet property="name" destination="VIZ-O3-4Hf" id="3VD-k2-USW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -181,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTb-g5-cdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="789"/>
+            <point key="canvasLocation" x="2072.8000000000002" y="788.45577211394311"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="giZ-bz-0iT">
@@ -285,7 +321,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-K1-oep">
-                                                    <rect key="frame" x="56" y="10" width="45" height="24"/>
+                                                    <rect key="frame" x="57" y="10" width="45" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -311,7 +347,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gBy-3g-S5I" firstAttribute="leading" secondItem="UFn-4W-XKr" secondAttribute="trailing" constant="10" id="e6D-9z-HjN"/>
-                                                <constraint firstItem="TWC-K1-oep" firstAttribute="leading" secondItem="NzI-RX-RIH" secondAttribute="trailing" constant="9" id="g4i-bg-Jtc"/>
+                                                <constraint firstItem="TWC-K1-oep" firstAttribute="leading" secondItem="NzI-RX-RIH" secondAttribute="trailing" constant="10" id="g4i-bg-Jtc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
