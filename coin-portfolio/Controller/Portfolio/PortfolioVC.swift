@@ -30,9 +30,7 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewDidAppear(_ animated: Bool) {
         initSlideReveal()
         loadPortfolio()
-        
     }
-    
     func initSlideReveal(){
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
@@ -41,16 +39,6 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     // REVEAL setup END
     
     
-    //TODO: refresh on pull
-//    func updateValutas(){
-//        ApiDataService.instance.getTenValutas { (success) in
-//            if success {
-//                print(ApiDataService.instance.valutas)
-//                self.valutasMarket = ApiDataService.instance.valutas
-//                self.tableView.reloadData()
-//            }
-//        }
-//    }
     
     //    TABLE VIEW START
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,8 +49,9 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         let val = portfolioItems[indexPath.row]
         cell.name.text = val.name
         cell.amount.text = val.amount.roundedValue
-        cell.img.image = ApiDataService.instance.getImage(id: val.id!)
-        
+        if let imageCurrency = val.image {
+           cell.img.image = UIImage(data: imageCurrency)
+        }
         if ApiDataService.instance.getTrend(item: val) {
             cell.amount.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         } else {
@@ -75,23 +64,9 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let valuta : PortfolioItem = portfolioItems[indexPath.row]
-//        print(valuta)
     }
     //    TABLE VIEW END
     
-    
-//    func initMarketData(){
-//        ApiDataService.instance.getTenValutas { (success) in
-//            if success {
-//                print("success")
-//                ApiDataService.instance.getImages { (success) in
-//                    if success {
-//                        print("images loaded")
-//                    }
-//                }
-//            }
-//        }
-//    }
     
     func loadPortfolio() {
         self.portfolioItems = CoreDataService.instance.getPortfolioItems()

@@ -3,11 +3,12 @@
     <entity name="PortfolioItem" representedClassName="PortfolioItem" syncable="YES" codeGenerationType="class">
         <attribute name="amount" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="spend_money" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="symbol" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PortfolioItem" positionX="-54" positionY="-9" width="128" height="120"/>
+        <element name="PortfolioItem" positionX="-54" positionY="-9" width="128" height="135"/>
     </elements>
 </model>

@@ -299,12 +299,25 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-8F-fgb">
+                                        <rect key="frame" x="339" y="32" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="2R2-IA-N66"/>
+                                            <constraint firstAttribute="height" constant="18" id="fau-hc-0hk"/>
+                                        </constraints>
+                                        <state key="normal" image="coinBurger">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33333333329999998" green="0.36862745099999999" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="jiA-Cd-fVX" secondAttribute="bottom" constant="12" id="Mek-hA-FMU"/>
+                                    <constraint firstAttribute="trailing" secondItem="DFI-8F-fgb" secondAttribute="trailing" constant="12" id="MoX-zm-cnD"/>
+                                    <constraint firstItem="DFI-8F-fgb" firstAttribute="centerY" secondItem="Kac-mf-V8C" secondAttribute="centerY" id="QSM-Pz-96R"/>
                                     <constraint firstItem="Kac-mf-V8C" firstAttribute="centerX" secondItem="kH2-2S-FRF" secondAttribute="centerX" id="QbS-Xs-a5I"/>
                                     <constraint firstItem="Kac-mf-V8C" firstAttribute="centerY" secondItem="jiA-Cd-fVX" secondAttribute="centerY" id="SgC-PD-f1h"/>
+                                    <constraint firstAttribute="bottom" secondItem="DFI-8F-fgb" secondAttribute="bottom" constant="12" id="Wv9-u9-rYR"/>
                                     <constraint firstItem="jiA-Cd-fVX" firstAttribute="leading" secondItem="kH2-2S-FRF" secondAttribute="leading" constant="12" id="aIh-RB-38c"/>
                                     <constraint firstItem="Kac-mf-V8C" firstAttribute="top" secondItem="kH2-2S-FRF" secondAttribute="top" constant="30" id="aUI-D8-Ri9"/>
                                 </constraints>

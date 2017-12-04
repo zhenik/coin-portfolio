@@ -36,6 +36,16 @@ class CoreDataService {
         portfolioItem.amount = amount
         portfolioItem.spend_money = spend
         portfolioItem.symbol = valuta.symbol
+        // add img
+        portfolioItem.image = UIImagePNGRepresentation(ApiDataService.instance.getImage(id: portfolioItem.id!))
+            
+//        if let image = itemImageView.image {
+//            if let imageData = UIImagePNGRepresentation(image) {
+//                item.image=imageData
+//            }
+//        }
+            
+            
         try? self.context.save()
         print("Added new item in core data")
     }
