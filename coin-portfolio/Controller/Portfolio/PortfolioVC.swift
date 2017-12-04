@@ -26,7 +26,16 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    // REVEAL setup START
+    func loadPortfolio() {
+        self.portfolioItems = CoreDataService.instance.getPortfolioItems()
+        self.tableView.reloadData()
+    }
+    
+    
+    
+    /*
+     ******************************* reveal setup START **********************************
+     **/
     override func viewDidAppear(_ animated: Bool) {
         initSlideReveal()
         loadPortfolio()
@@ -36,11 +45,18 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
-    // REVEAL setup END
+    /*
+     ******************************* reveal setup END **********************************
+     **/
     
     
     
-    //    TABLE VIEW START
+    
+    
+    
+    /*
+     ******************************* table view START **********************************
+     **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return portfolioItems.count
     }
@@ -65,15 +81,42 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let valuta : PortfolioItem = portfolioItems[indexPath.row]
-    }
-    //    TABLE VIEW END
-    
-    
-    func loadPortfolio() {
-        self.portfolioItems = CoreDataService.instance.getPortfolioItems()
-        self.tableView.reloadData()
+        performSegue(withIdentifier: TO_PORTFOLIO_ITEM, sender: valuta)
     }
     
+    // Editable raw
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let item = portfolioItems[indexPath.row]
+            CoreDataService.instance.deleteItemById(id: item.id!)
+            loadPortfolio()
+            print("DELETED")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let portfolioItemVC = segue.destination as? PortfolioItemVC {
+            if let portfolioItem = sender as? PortfolioItem {
+                portfolioItemVC.selectedItem = portfolioItem
+                portfolioItemVC.previousVC = self
+            }
+        }
+    }
+    /*
+     ******************************* table view END **********************************
+     **/
+    
+    
+    
+
+    
+    /*
+     ******************************* ACTIONS **********************************
+     **/
     @IBAction func updateTapped(_ sender: Any) {
         ApiDataService.instance.getTenValutas { (success) in
             if success {

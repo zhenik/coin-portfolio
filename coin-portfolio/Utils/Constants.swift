@@ -18,4 +18,5 @@ let IMG_API_URL = "https://files.coinmarketcap.com/static/img/coins/32x32/"
 
 // SEGUES
 let TO_MARKET_ITEM = "toMarketItem"
+let TO_PORTFOLIO_ITEM = "toPortfolioItem"
 

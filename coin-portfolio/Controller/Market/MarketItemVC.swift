@@ -36,6 +36,10 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         initPopupDesign()
     }
     
+    
+    /*
+     ******************************* card view START **********************************
+     **/
     func initCardDesign(){
         cardViewMarket.layer.cornerRadius = 3
         cardViewMarket.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -43,7 +47,6 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         cardViewMarket.layer.shadowRadius = 1.7
         cardViewMarket.layer.shadowOpacity = 0.45
     }
-    
     func initCardData(){
         if let valuta = selectedValuta {
             valutaNameLbl.text=valuta.name
@@ -54,16 +57,30 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
             priceLbl.text = valuta.price_nok.roundedValue
         }
     }
+    /*
+     ******************************* card view END **********************************
+     **/
     
+    
+    /*
+     ******************************* navbar view START **********************************
+     **/
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    /*
+     ******************************* navbar view END **********************************
+     **/
     
-//    POPUP START
-// https://youtu.be/CXvOS6hYADc
+    
+    
+    /*
+     ******************************* popup START **********************************
+     * https://youtu.be/CXvOS6hYADc
+     **/
     func initPopupDesign(){
         // text field setup
         amountField.delegate = self
@@ -103,7 +120,9 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+
+    // ******** popup ACTIONS *******
+
     @IBAction func showPopup(_ sender: Any) {
         animateIn()
     }
@@ -114,9 +133,16 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         self.addItemToPortfolio()
         
     }
-//    POPUP END
+    /*
+     ******************************* popup END **********************************
+     **/
     
     
+    
+    
+    /*
+     ******************************* add item feature START **********************************
+     **/
     func addItemToPortfolio() {
         if let text = amountField.text {
             if let amount = Double(text){
@@ -125,17 +151,23 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
                 CoreDataService.instance.addToPortfolio(valuta: selectedValuta!, amount: amount, spend: spend_money)
             }
         }
-
         amountField.text = ""
     }
+    /*
+     ******************************* add item feature END **********************************
+     **/
     
     
+    
+    
+    /*
+     ******************************* update feature START **********************************
+     **/
     @IBAction func updateCardData(_ sender: Any) {
         updateValutas()
     }
-    
     func updateValutas(){
-        print("previous state:  \(selectedValuta)")
+//        debugPrint("previous state:  \(selectedValuta)")
         
         ApiDataService.instance.getTenValutas { (success) in
             if success {
@@ -144,10 +176,12 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
                 self.selectedValuta = ApiDataService.instance.getValutaById(id: id)
                 // refresh view
                 self.initCardData()
-                print("new state:  \(self.selectedValuta)")
+//                debugPrint("new state:  \(self.selectedValuta)")
             }
         }
-        
     }
+    /*
+     ******************************* update feature END **********************************
+     **/
     
 }

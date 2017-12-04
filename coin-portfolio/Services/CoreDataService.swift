@@ -109,4 +109,10 @@ class CoreDataService {
         }
         return [PortfolioItem]()
     }
+    
+    func deleteItemById(id: String){
+        if let item = getItemById(id: id){
+            context.delete(item)
+        }
+    }
 }

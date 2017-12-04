@@ -14,7 +14,7 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
-    // Data
+    // Vars
     var valutasMarket: [Valuta] = []
     
     override func viewDidLoad() {
@@ -25,18 +25,31 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         valutasMarket=ApiDataService.instance.valutas
     }
     
+    
+    /*
+     ******************************* reveal setup START **********************************
+     **/
     override func viewDidAppear(_ animated: Bool) {
         initSlideReveal()
         self.tableView.reloadData()
     }
-    
     func initSlideReveal(){
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     }
+    /*
+     ******************************* reveal setup END **********************************
+     **/
     
-    //    TABLE VIEW START
+    
+    
+    
+    
+    
+    /*
+     ******************************* table view START **********************************
+     **/
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return valutasMarket.count
     }
@@ -67,8 +80,16 @@ class MarketVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
-    //    TABLE VIEW END
+    /*
+     ******************************* table view END **********************************
+     **/
     
+    
+    
+    
+    /*
+     ******************************* ACTIONS **********************************
+     **/
     @IBAction func updateTapped(_ sender: Any) {
         ApiDataService.instance.getTenValutas { (success) in
             if success {

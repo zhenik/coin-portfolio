@@ -229,26 +229,46 @@
                     <connections>
                         <outlet property="menuBtn" destination="fgf-34-lUz" id="ZwI-6f-pRC"/>
                         <outlet property="tableView" destination="9M5-Gb-wIc" id="dMf-bu-Kxn"/>
+                        <segue destination="a1t-Id-cUY" kind="show" identifier="toPortfolioItem" id="zOW-yN-BiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTb-g5-cdT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2072.8000000000002" y="788.45577211394311"/>
         </scene>
-        <!--View Controller-->
+        <!--Portfolio ItemVC-->
         <scene sceneID="giZ-bz-0iT">
             <objects>
-                <viewController id="a1t-Id-cUY" sceneMemberID="viewController">
+                <viewController id="a1t-Id-cUY" customClass="PortfolioItemVC" customModule="coin_portfolio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TtJ-TJ-p8j">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="b0V-Ek-fCK">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlw-F6-tEH">
+                                <rect key="frame" x="16" y="87" width="343" height="209"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b0V-Ek-fCK" firstAttribute="top" secondItem="dzt-l5-LFl" secondAttribute="top" id="L58-jZ-CbZ"/>
+                            <constraint firstItem="b0V-Ek-fCK" firstAttribute="leading" secondItem="dzt-l5-LFl" secondAttribute="leading" id="Qyh-Ck-9gz"/>
+                            <constraint firstItem="b0V-Ek-fCK" firstAttribute="bottom" secondItem="dzt-l5-LFl" secondAttribute="bottom" id="efx-Lm-LGV"/>
+                            <constraint firstItem="b0V-Ek-fCK" firstAttribute="trailing" secondItem="dzt-l5-LFl" secondAttribute="trailing" id="nOz-nc-oKM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dzt-l5-LFl"/>
                     </view>
+                    <connections>
+                        <outlet property="cardViewItem" destination="xlw-F6-tEH" id="IWG-Cc-gGC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8bc-qO-MXR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2902" y="790"/>
+            <point key="canvasLocation" x="2901.5999999999999" y="789.35532233883066"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="tne-QT-ifu">
