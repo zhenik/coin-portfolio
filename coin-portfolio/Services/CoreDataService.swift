@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 
+// Source: https://cocoacasts.com/reading-and-updating-managed-objects-with-core-data/
 class CoreDataService {
     // singleton
     static let instance = CoreDataService()
@@ -20,10 +21,10 @@ class CoreDataService {
     
     func addToPortfolio(valuta: Valuta, amount: Double, spend: Double) {
         if let item = isAlreadyInPortfolio(id: valuta.id) {
-//            print("is already in portfolio:  \(item)")
+            //            print("is already in portfolio:  \(item)")
             updateEntity(portfolioItem: item, amount: amount, spend: spend)
         } else {
-//            print("add new item: \(valuta.name)")
+            //            print("add new item: \(valuta.name)")
             createRecordForEntity(valuta: valuta, amount: amount, spend: spend)
         }
     }
@@ -58,23 +59,20 @@ class CoreDataService {
     }
     
     private func updateEntity(portfolioItem: NSManagedObject, amount: Double, spend: Double) {
-        do {
-            let oldAmount = portfolioItem.value(forKey: "amount") as! Double
-            let oldSpend_money = portfolioItem.value(forKey: "spend_money") as! Double
-            let newAmount = oldAmount + amount
-            let newSpend_money = oldSpend_money + spend
-            
-            print("""
-                oldAmount: \(oldAmount)
-                oldSpend_money: \(oldSpend_money)
-                newAmount: \(newAmount)
-                newSpend: \(newSpend_money)
-                """)
-            portfolioItem.setValue(Double(newSpend_money), forKey: "spend_money")
-            portfolioItem.setValue(Double(newAmount), forKey: "amount")
-        } catch {
-            debugPrint("update fail")
-        }
+        
+        let oldAmount = portfolioItem.value(forKey: "amount") as! Double
+        let oldSpend_money = portfolioItem.value(forKey: "spend_money") as! Double
+        let newAmount = oldAmount + amount
+        let newSpend_money = oldSpend_money + spend
+        
+        print("""
+            oldAmount: \(oldAmount)
+            oldSpend_money: \(oldSpend_money)
+            newAmount: \(newAmount)
+            newSpend: \(newSpend_money)
+            """)
+        portfolioItem.setValue(Double(newSpend_money), forKey: "spend_money")
+        portfolioItem.setValue(Double(newAmount), forKey: "amount")
     }
     
     func getItemById(id: String)-> NSManagedObject?{
@@ -101,7 +99,4 @@ class CoreDataService {
         }
         return [PortfolioItem]()
     }
-    
-    
-    
 }
