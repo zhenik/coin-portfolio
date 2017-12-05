@@ -91,7 +91,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
                     portfolioTrendLbl.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
                     portfolioTrendLbl.text = "\(trend.roundedValue)"
                 }
-                
+                portfolioView.isHidden=false
             } else {
                 portfolioView.isHidden=true
             }
@@ -173,6 +173,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         animateOut()
         //TODO: logic add to portfolio
         self.addItemToPortfolio()
+        initPortfolioData()
         
     }
     /*
@@ -193,7 +194,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
                 CoreDataService.instance.addToPortfolio(valuta: selectedValuta!, amount: amount, spend: spend_money)
             }
         }
-        initPortfolioData()
+        
         amountField.text = ""
     }
     /*
@@ -208,6 +209,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
      **/
     @IBAction func updateCardData(_ sender: Any) {
         updateValutas()
+        initPortfolioData()
     }
     func updateValutas(){
 //        debugPrint("previous state:  \(selectedValuta)")
