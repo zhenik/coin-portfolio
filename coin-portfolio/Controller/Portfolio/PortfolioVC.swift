@@ -14,6 +14,10 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    // Totals
+    @IBOutlet weak var totalSpendLbl: UILabel!
+    @IBOutlet weak var totalTrendLbl: UILabel!
+    
     // Vars
     var valutasMarket: [Valuta] = []
     var portfolioItems: [PortfolioItem] = []
@@ -24,6 +28,7 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
     }
     
     func loadPortfolio() {
@@ -39,6 +44,7 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     override func viewDidAppear(_ animated: Bool) {
         initSlideReveal()
         loadPortfolio()
+        initTotals()
     }
     func initSlideReveal(){
         menuBtn.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
@@ -69,11 +75,12 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
            cell.img.image = UIImage(data: imageCurrency)
         }
         
-        if ApiDataService.instance.getTrend(item: val) {
+        if ApiDataService.instance.isTrendPositive(item: val) {
             cell.amount.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
         } else {
             cell.amount.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
         }
+        
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -112,6 +119,33 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     
     
+    
+    /*
+     ******************************* total view START **********************************
+     **/
+    
+    func initTotals() {
+        totalSpendLbl.text = CoreDataService.instance.getTotalSpend().roundedValue
+        let totalTrend = CoreDataService.instance.getTrendForPortfolio()
+        
+        if totalTrend>0 {
+            totalTrendLbl.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+            totalTrendLbl.text = "+\(totalTrend.roundedValue)"
+        } else if totalTrend<0 {
+            totalTrendLbl.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            totalTrendLbl.text = "+\(totalTrend.roundedValue)"
+        } else {
+            totalTrendLbl.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+            totalTrendLbl.text = "click update"
+        }
+        
+    }
+    
+    /*
+     ******************************* table view END **********************************
+     **/
+    
+    
 
     
     /*
@@ -121,6 +155,7 @@ class PortfolioVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         ApiDataService.instance.getTenValutas { (success) in
             if success {
                 self.tableView.reloadData()
+                self.initTotals()
                 print("DATA RELOADED")
             }
         }

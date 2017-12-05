@@ -282,6 +282,8 @@
                     <connections>
                         <outlet property="menuBtn" destination="fgf-34-lUz" id="ZwI-6f-pRC"/>
                         <outlet property="tableView" destination="9M5-Gb-wIc" id="dMf-bu-Kxn"/>
+                        <outlet property="totalSpendLbl" destination="78C-R6-WTm" id="dJS-fW-coZ"/>
+                        <outlet property="totalTrendLbl" destination="OpN-8y-6jf" id="a2J-8q-5T4"/>
                         <segue destination="a1t-Id-cUY" kind="show" identifier="toPortfolioItem" id="zOW-yN-BiR"/>
                     </connections>
                 </viewController>

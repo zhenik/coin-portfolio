@@ -38,14 +38,6 @@ class CoreDataService {
         portfolioItem.symbol = valuta.symbol
         // add img
         portfolioItem.image = UIImagePNGRepresentation(ApiDataService.instance.getImage(id: portfolioItem.id!))
-            
-//        if let image = itemImageView.image {
-//            if let imageData = UIImagePNGRepresentation(image) {
-//                item.image=imageData
-//            }
-//        }
-            
-            
         try? self.context.save()
         print("Added new item in core data")
     }
@@ -114,5 +106,25 @@ class CoreDataService {
         if let item = getItemById(id: id){
             context.delete(item)
         }
+    }
+    
+   
+    
+    func getTotalSpend() -> Double {
+        let items = getPortfolioItems()
+        var spendTotal : Double = 0
+        for item in items {
+            spendTotal = spendTotal + item.spend_money
+        }
+        return spendTotal
+    }
+    
+    func getTrendForPortfolio() -> Double {
+        let items = getPortfolioItems()
+        var totalMoneySpendForPortfolio : Double = 0
+        for item in items {
+            totalMoneySpendForPortfolio = totalMoneySpendForPortfolio + ApiDataService.instance.getTrend(item: item)
+        }
+        return totalMoneySpendForPortfolio
     }
 }

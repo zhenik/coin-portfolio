@@ -92,8 +92,8 @@ class ApiDataService {
     }
     
     // True -> positive trend, false -> negative trend
-    // return true if cellPrice > spend_money
-    func getTrend(item : PortfolioItem) -> Bool {
+    // return true if sellPrice > spend_money
+    func isTrendPositive(item : PortfolioItem) -> Bool {
         guard let valuta = getValutaById(id: item.id!) else {return false}
         let sellPrice = item.amount * valuta.price_nok
         if sellPrice >= item.spend_money {
@@ -101,5 +101,12 @@ class ApiDataService {
         }
         return false
     }
+    
+    func getTrend(item : PortfolioItem) -> Double {
+        guard let valuta = getValutaById(id: item.id!) else {return Double(0)}
+        let sellPrice = item.amount * valuta.price_nok
+        return sellPrice - item.spend_money
+    }
+    
 }
 
