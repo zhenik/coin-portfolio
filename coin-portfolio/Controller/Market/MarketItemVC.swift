@@ -10,7 +10,7 @@ import UIKit
 
 class MarketItemVC: UIViewController, UITextFieldDelegate {
     
-    // Outlets
+    // outlets
     @IBOutlet weak var cardViewMarket: UIView!
     @IBOutlet weak var hourLbl: UILabel!
     @IBOutlet weak var dayLbl: UILabel!
@@ -19,12 +19,20 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var valuteImg: UIImageView!
     @IBOutlet weak var priceLbl: UILabel!
     
+    // portfolio card
+    @IBOutlet weak var portfolioView: UIView!
+    @IBOutlet weak var portfolioAmountLbl: UILabel!
+    @IBOutlet weak var portfolioMoneySpendLbl: UILabel!
+    @IBOutlet weak var portfolioTrendLbl: UILabel!
+    
+    
+    
     // popup
     @IBOutlet weak var popupImg: UIImageView!
     @IBOutlet var popUp: UIView!
     @IBOutlet weak var amountField: UITextField!
     
-    // Vars
+    // vars
     var previousVC = MarketVC()
     var selectedValuta : Valuta?
     
@@ -32,7 +40,9 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 //        print(selectedValuta)
         initCardData()
-        initCardDesign()
+        initPortfolioData()
+        initCardDesign(view: self.cardViewMarket)
+        initCardDesign(view: self.portfolioView)
         initPopupDesign()
     }
     
@@ -40,12 +50,12 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
     /*
      ******************************* card view START **********************************
      **/
-    func initCardDesign(){
-        cardViewMarket.layer.cornerRadius = 3
-        cardViewMarket.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        cardViewMarket.layer.shadowOffset = CGSize(width: 0, height: 1.75)
-        cardViewMarket.layer.shadowRadius = 1.7
-        cardViewMarket.layer.shadowOpacity = 0.45
+    func initCardDesign(view: UIView){
+        view.layer.cornerRadius = 3
+        view.layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        view.layer.shadowOffset = CGSize(width: 0, height: 1.75)
+        view.layer.shadowRadius = 1.7
+        view.layer.shadowOpacity = 0.45
     }
     func initCardData(){
         if let valuta = selectedValuta {
@@ -60,6 +70,41 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
     /*
      ******************************* card view END **********************************
      **/
+    
+    /*
+     ******************************* portfolio view START **********************************
+     **/
+    func initPortfolioData(){
+        if let valuta = selectedValuta {
+            
+            if let item = CoreDataService.instance.getItemById(id: valuta.id) as! PortfolioItem? {
+                portfolioAmountLbl.text = item.amount.roundedValue
+                portfolioMoneySpendLbl.text = item.spend_money.roundedValue
+                
+                let sellPrice = item.amount * valuta.price_nok
+                let trend = sellPrice - item.spend_money
+               
+                if sellPrice >= item.spend_money {
+                    portfolioTrendLbl.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+                    portfolioTrendLbl.text = "+\(trend.roundedValue)"
+                } else {
+                    portfolioTrendLbl.textColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+                    portfolioTrendLbl.text = "\(trend.roundedValue)"
+                }
+                
+            } else {
+                portfolioView.isHidden=true
+            }
+            
+        } else {
+            portfolioView.isHidden=true
+        }
+    }
+    
+    /*
+     ******************************* portfolio view END **********************************
+     **/
+    
     
     
     /*
@@ -110,7 +155,6 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
             self.popUp.transform = CGAffineTransform.identity
         }
     }
-    
     func animateOut(){
         UIView.animate(withDuration: 0.4, animations: {
             self.popUp.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
@@ -120,9 +164,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
         }
     }
     
-
     // ******** popup ACTIONS *******
-
     @IBAction func showPopup(_ sender: Any) {
         animateIn()
     }
@@ -151,6 +193,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
                 CoreDataService.instance.addToPortfolio(valuta: selectedValuta!, amount: amount, spend: spend_money)
             }
         }
+        initPortfolioData()
         amountField.text = ""
     }
     /*
@@ -176,6 +219,7 @@ class MarketItemVC: UIViewController, UITextFieldDelegate {
                 self.selectedValuta = ApiDataService.instance.getValutaById(id: id)
                 // refresh view
                 self.initCardData()
+                self.initPortfolioData()
 //                debugPrint("new state:  \(self.selectedValuta)")
             }
         }
