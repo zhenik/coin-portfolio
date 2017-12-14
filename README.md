@@ -1,5 +1,4 @@
-# Coin-portfolio - iOs app (PG5600 exam)
-## 0 App description
+# Coin-portfolio - iOs app (PG5600 exam)  
 Crypto currencies portfolio with features to add/remove and check trend of current portfolio. Demo application for people to try crypto currency market without material risk.  
 
 ## Video description
