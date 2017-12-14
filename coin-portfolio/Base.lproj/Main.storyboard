@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,43 +51,22 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuK-xl-41h">
                                 <rect key="frame" x="0.0" y="128" width="375" height="529"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_account_white" translatesAutoresizingMaskIntoConstraints="NO" id="OOd-h0-5f1">
-                                        <rect key="frame" x="20" y="24" width="48" height="48"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Q4I-RR-WFc" userLabel="Doc">
+                                        <rect key="frame" x="8" y="8" width="321" height="226"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="48" id="7Xa-df-tAL"/>
-                                            <constraint firstAttribute="height" constant="48" id="ws4-tw-96u"/>
+                                            <constraint firstAttribute="height" constant="226" id="NpL-7Z-1J2"/>
                                         </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myd-Lv-lSt">
-                                        <rect key="frame" x="83" y="32" width="92" height="33"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="My porfolio">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_money_white" translatesAutoresizingMaskIntoConstraints="NO" id="Lnv-py-nht">
-                                        <rect key="frame" x="20" y="82" width="48" height="48"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybK-7W-chi">
-                                        <rect key="frame" x="83" y="90" width="137" height="33"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                        <state key="normal" title="Currency market">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
+                                        <string key="text">Coin-portfolio application for testing cryptocurrencies market. Provide opportunity to add to portfolio, remove and track trends currencies which is in portfolio.</string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Lnv-py-nht" firstAttribute="top" secondItem="OOd-h0-5f1" secondAttribute="bottom" constant="10" id="Dyb-NW-aw2"/>
-                                    <constraint firstItem="ybK-7W-chi" firstAttribute="centerY" secondItem="Lnv-py-nht" secondAttribute="centerY" id="FHx-eo-ri2"/>
-                                    <constraint firstItem="Myd-Lv-lSt" firstAttribute="centerY" secondItem="OOd-h0-5f1" secondAttribute="centerY" id="Ggr-cT-fYu"/>
-                                    <constraint firstItem="Lnv-py-nht" firstAttribute="leading" secondItem="OOd-h0-5f1" secondAttribute="leading" id="J8P-7Y-ODi"/>
-                                    <constraint firstItem="Myd-Lv-lSt" firstAttribute="leading" secondItem="OOd-h0-5f1" secondAttribute="trailing" constant="15" id="JUn-Hs-cDm"/>
-                                    <constraint firstItem="Lnv-py-nht" firstAttribute="width" secondItem="OOd-h0-5f1" secondAttribute="width" id="P7U-lz-NEN"/>
-                                    <constraint firstItem="ybK-7W-chi" firstAttribute="leading" secondItem="Myd-Lv-lSt" secondAttribute="leading" id="bdg-Ne-Lr9"/>
-                                    <constraint firstItem="OOd-h0-5f1" firstAttribute="leading" secondItem="fuK-xl-41h" secondAttribute="leading" constant="20" id="f0A-ZL-MPo"/>
-                                    <constraint firstItem="OOd-h0-5f1" firstAttribute="top" secondItem="fuK-xl-41h" secondAttribute="top" constant="24" id="oC9-AC-cbR"/>
-                                    <constraint firstItem="Lnv-py-nht" firstAttribute="height" secondItem="OOd-h0-5f1" secondAttribute="height" id="qxw-ov-OeM"/>
+                                    <constraint firstItem="Q4I-RR-WFc" firstAttribute="top" secondItem="fuK-xl-41h" secondAttribute="top" constant="8" id="ahL-Pa-BRF"/>
+                                    <constraint firstItem="Q4I-RR-WFc" firstAttribute="leading" secondItem="fuK-xl-41h" secondAttribute="leading" constant="8" id="cws-Cp-a5v"/>
+                                    <constraint firstAttribute="trailing" secondItem="Q4I-RR-WFc" secondAttribute="trailing" constant="46" id="o2b-f7-8JM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -109,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guI-ay-6Be" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="330" y="-856"/>
+            <point key="canvasLocation" x="328.80000000000001" y="-856.82158920539734"/>
         </scene>
         <!--PortfolioVC-->
         <scene sceneID="j48-ik-eT9">
@@ -1024,8 +1003,6 @@
     <resources>
         <image name="background" width="1242" height="2208"/>
         <image name="coinBurger" width="40" height="40"/>
-        <image name="ic_account_white" width="48" height="48"/>
-        <image name="ic_money_white" width="48" height="48"/>
         <image name="ic_refresh_white" width="40" height="40"/>
         <image name="ic_tabbar_account" width="24" height="24"/>
         <image name="ic_tabbar_market" width="24" height="24"/>
